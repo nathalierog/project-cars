@@ -18,8 +18,8 @@ class CreateCarsTable extends Migration
             $table->string('model', 255);
             $table->string('keyword', 255);
             $table->string('price', 255)->comment("price in euro");
-            $table->integer('mileage', 255)->comment('mileage in km');
-            $table->integer('year', 255);
+            $table->integer('mileage')->comment('mileage in km');
+            $table->integer('year');
             $table->string('color', 255);
             $table->string('transmission', 255);
             $table->string('body', 255);
@@ -28,8 +28,8 @@ class CreateCarsTable extends Migration
             $table->string('main_img', 255);
             $table->text('description');
             $table->boolean('sold')->default('0');
-            $table->integer('spend_on', 255)->comment("the amount of money that is spend on this car")->nullable();
-            $table->integer('sold_for', 255)->comment("the amount of money received for this car")->nullable();
+            $table->integer('spend_on')->comment("the amount of money that is spend on this car")->nullable();
+            $table->integer('sold_for')->comment("the amount of money received for this car")->nullable();
         });
     }
 
