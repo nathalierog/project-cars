@@ -18,3 +18,12 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix' => 'cars'], function () {
+	Route::get('overview', function () {
+		return view('cars.overview');
+	});
+	Route::get('details', function () {
+		return view('cars.details');
+	});
+});
