@@ -1,0 +1,108 @@
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+/*main*/
+html,
+body{
+	height:  100%;
+    font-family: 'Lato';
+}
+
+body > #container{
+	padding: 60px 15px 0;
+}
+
+/*header*/
+/*#app-default-navbar*/
+#app-layout #app-default-navbar{
+	margin-bottom: 0;
+}
+
+#app-layout .navbar-static-top{
+	background: #666;
+}
+
+#app-layout .navbar-static-top a{
+	color:  white;
+}
+
+#app-layout .navbar-static-top a:hover{
+	background: #595959;
+}
+
+#app-layout .navbar-static-top a:focus{
+	background: #606060;
+}
+
+#app-layout .navbar-static-top a .fa-phone, #app-layout .navbar-static-top a .fa-sign-in{
+	margin-right: 5px;
+}
+
+/*#app-sticky-navbar*/
+#app-layout #app-sticky-navbar{
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2),0 6px 15px 0 rgba(0, 0, 0, 0.19);
+	z-index: 666;
+}
+
+.affix{
+   	top: 0;
+    width: 100%;
+}
+
+@media (min-width: 480px){
+	#app-layout #app-sticky-navbar{
+		height: 80px;
+	}
+
+	#app-layout #app-sticky-navbar a{
+		height: 80px;
+	}
+
+	#app-layout #app-sticky-navbar .navbar-right a{
+		padding-top: 30px;
+		padding-bottom: 30px;
+	}
+
+	#app-layout #app-sticky-navbar .navbar-toggle{
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+
+	.affix + #content{
+	    padding-top: 100px;
+	}
+}
+
+@media (max-width: 480px){
+	.affix + #content{
+	    padding-top: 70px;
+	}
+}
+
+#app-layout #app-sticky-navbar .navbar-right li{
+	border-left: 1px solid #BBB;
+	border-right: 1px solid #BBB;
+}
+
+#app-layout #app-sticky-navbar .fa-car{
+	margin-right: 5px;
+}
+
+#app-layout #app-sticky-navbar .navbar-brand > img{
+    height: 100%;
+}
+
+/*#content*/
+
+#app-layout .fa-btn{
+    margin-right: 5px;
+}
+
+#app-layout #content{
+	position: relative;
+	min-height: 100%;
+}
+
+/*footer*/
+#app-layout #app-default-footer hr{
+	border-color: #BBB;
+}
