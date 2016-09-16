@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project CARS</title>
-    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/layout.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/layout.css') }}">
+    @yield('header') 
 </head>
 <body id="app-layout">
     <header class="navbar navbar-static-top" id="app-default-navbar">
@@ -47,7 +48,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="img/logo.png" alt="car logo" data-toggle="tooltip" data-placement="right" title="Klik hier om naar home te gaan">
+                    <img src="{{ URL::asset('img/logo.png') }}" alt="car logo" data-toggle="tooltip" data-placement="right" title="Klik hier om naar home te gaan">
                 </a>
             </div>
             <div class="collapse navbar-collapse">
@@ -65,8 +66,8 @@
             <hr> 
         </div>
     </footer>
-    <script src="assets/jquery/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/layout.js"></script>
+    <script src="{{ URL::asset('assets/jquery/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('js/layout.js') }}"></script>
 </body>
 </html>
