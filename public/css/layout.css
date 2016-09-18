@@ -37,6 +37,12 @@ body > #container{
 	margin-right: 5px;
 }
 
+@media (max-width: 768px){
+	#app-layout #app-default-navbar{
+		display: none;
+	} 
+}
+
 /*#app-sticky-navbar*/
 #app-layout #app-sticky-navbar{
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2),0 6px 15px 0 rgba(0, 0, 0, 0.19);
@@ -48,21 +54,34 @@ body > #container{
     width: 100%;
 }
 
+#app-layout #app-sticky-navbar .navbar-right li{
+	border-left: 1px solid #BBB;
+	border-right: 1px solid #BBB;
+}
+
+#app-layout #app-sticky-navbar .navbar-right .fa-car{
+	margin-right: 5px;
+}
+
+#app-layout #app-sticky-navbar .navbar-brand > img{
+    height: 100%;
+}
+
 @media (min-width: 480px){
-	#app-layout #app-sticky-navbar{
+	#app-layout #app-sticky-navbar .navbar-header{
+		min-height: 80px;
+	}
+
+	#app-layout #app-sticky-navbar .navbar-header a{
 		height: 80px;
 	}
 
-	#app-layout #app-sticky-navbar a{
-		height: 80px;
-	}
-
-	#app-layout #app-sticky-navbar .navbar-right a{
+	#app-layout #app-sticky-navbar .navbar-padding .navbar-right li a{
 		padding-top: 30px;
 		padding-bottom: 30px;
 	}
 
-	#app-layout #app-sticky-navbar .navbar-toggle{
+	#app-layout #app-sticky-navbar .navbar-header .navbar-toggle{
 		margin-top: 25px;
 		margin-bottom: 25px;
 	}
@@ -72,27 +91,24 @@ body > #container{
 	}
 }
 
-@media (max-width: 480px){
-	.affix + #content{
-	    padding-top: 70px;
+@media (max-width: 768px){
+	#app-layout #app-sticky-navbar .navbar-header{
+		min-height: 50px;
 	}
 }
 
-#app-layout #app-sticky-navbar .navbar-right li{
-	border-left: 1px solid #BBB;
-	border-right: 1px solid #BBB;
+/*app-mobile-menu*/
+@media (min-width: 768px){
+	#app-layout #app-mobile-menu{
+		display: none !important;
+	}
 }
 
-#app-layout #app-sticky-navbar .fa-car{
+#app-layout #app-mobile-menu .fa-phone, #app-layout #app-mobile-menu .fa-sign-in, #app-layout #app-mobile-menu .fa-car{
 	margin-right: 5px;
 }
 
-#app-layout #app-sticky-navbar .navbar-brand > img{
-    height: 100%;
-}
-
 /*#content*/
-
 #app-layout .fa-btn{
     margin-right: 5px;
 }
@@ -100,6 +116,18 @@ body > #container{
 #app-layout #content{
 	position: relative;
 	min-height: 100%;
+}
+
+@media (max-width: 768px){
+	#app-layout #content{
+		padding-top: 95px;
+	}
+}
+
+@media (max-width: 480px){
+	#app-layout #content{
+		padding-top: 65px;
+	}
 }
 
 /*footer*/
