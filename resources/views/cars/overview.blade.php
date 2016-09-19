@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col-md-12">
         @for ($i = 0; $i < 20; $i++)
-            <a href="{{url('cars/details')}}">
-                <div class="col-md-12 col-sm-6 col-xs-6">
+            <a href="{{ url('cars/details') }}">
+                <div class="col-md-12 col-sm-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h2 class="h4 text-center-xs text-center-sm">

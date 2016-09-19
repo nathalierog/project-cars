@@ -58,14 +58,14 @@
             </div>
             <div class="collapse navbar-collapse" id="app-mobile-menu">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/') }}" data-toggle="tooltip" data-placement="bottom" title="Home"><i class="fa fa-home fa-fw" aria-hidden="true"></i></a></li>
-                    <li><a href="{{ url('/about') }}" data-toggle="tooltip" data-placement="bottom" title="Over ons">Over ons</a></li>
-                    <li><a href="{{ url('/contact') }}" data-toggle="tooltip" data-placement="bottom" title="Contact"><i class="fa fa-phone fa-fw" aria-hidden="true"></i>Contact</a></li>
+                    <li><a href="{{ url('/') }}" title="Home">Home</a></li>
+                    <li><a href="{{ url('/about') }}" title="Over ons">Over ons</a></li>
+                    <li><a href="{{ url('/contact') }}" title="Contact">Contact</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}" data-toggle="tooltip" data-placement="bottom" title="Inloggen"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Inloggen</a></li>
-                        <li><a href="{{ url('/register') }}" data-toggle="tooltip" data-placement="bottom" title="Registreren">Registreren</a></li>
+                        <li><a href="{{ url('/login') }}" title="Inloggen">Inloggen</a></li>
+                        <li><a href="{{ url('/register') }}" title="Registreren">Registreren</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -77,7 +77,7 @@
                             </ul>
                         </li>
                     @endif
-                    <li><a href="{{ url('/zoeken') }}" data-toggle="tooltip" data-placement="left" title="Zoeken"><i class="fa fa-car fa-fw" aria-hidden="true"></i>Zoeken</a></li>
+                    <li><a href="{{ url('/zoeken') }}" title="Zoeken">Zoeken</a></li>
                 </ul>
             </div>
         </div>

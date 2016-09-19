@@ -33,6 +33,22 @@ body > #container{
 	background: #606060;
 }
 
+#app-layout .navbar-static-top .dropdown-menu a{
+	color: #333;
+}
+
+#app-layout .navbar-static-top .dropdown-menu a:hover{
+	background: #e7e7e7;
+}
+
+#app-layout .navbar-static-top .navbar-right .open > a{
+	background: #606060;
+}
+
+#app-layout .navbar-static-top .dropdown-menu a:focus{
+	background: #e7e7e7;
+}
+
 #app-layout .navbar-static-top a .fa-phone, #app-layout .navbar-static-top a .fa-sign-in{
 	margin-right: 5px;
 }
