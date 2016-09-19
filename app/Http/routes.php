@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
+Route::get('/', function () {
+    return view('home');
 });
 
 Route::auth();
 
-Route::get('/', 'HomeController@index');
+Route::get('/welcome', 'HomeController@index');
 
 Route::group(['prefix' => 'cars'], function () {
 	Route::get('overview', function () {
