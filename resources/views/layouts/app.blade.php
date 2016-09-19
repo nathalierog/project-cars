@@ -28,8 +28,10 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
-
                             <ul class="dropdown-menu" role="menu">
+                            @if (Auth::user()->role >= 2)
+                                <li><a href="{{ url('/backpanel') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
+                            @endif
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
                             </ul>
                         </li>
@@ -71,8 +73,10 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
-
                             <ul class="dropdown-menu" role="menu">
+                            @if (Auth::user()->role >= 2)
+                                <li><a href="{{ url('/backpanel') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
+                            @endif
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
                             </ul>
                         </li>
@@ -87,7 +91,7 @@
     </section>
     <footer id="app-default-footer">
         <div class="container">
-            <hr> 
+            <hr>
         </div>
     </footer>
     <script src="{{ URL::asset('assets/jquery/jquery.min.js') }}"></script>
