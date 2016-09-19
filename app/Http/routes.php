@@ -17,8 +17,6 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/welcome', 'HomeController@index');
-
 Route::group(['prefix' => 'cars'], function () {
 	Route::get('overview', function () {
 		return view('cars.overview');
