@@ -22,3 +22,8 @@
 	background-color: #666 !important;
 	color: white !important;
 }
+
+.carousel img{
+    width: 100%;
+
+}
