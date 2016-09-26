@@ -6,11 +6,6 @@ body{
 	height:  100%;
     font-family: 'Lato';
 }
-
-body > #container{
-	padding: 60px 15px 0;
-}
-
 /*header*/
 /*#app-default-navbar*/
 #app-layout #app-default-navbar{
@@ -102,7 +97,7 @@ body > #container{
 		margin-bottom: 25px;
 	}
 
-	.affix + #content{
+	.affix + #app-content{
 	    padding-top: 100px;
 	}
 }
@@ -129,19 +124,19 @@ body > #container{
     margin-right: 5px;
 }
 
-#app-layout #content{
+#app-layout #app-content{
 	position: relative;
 	min-height: 100%;
 }
 
 @media (max-width: 768px){
-	#app-layout #content{
+	#app-layout #app-content{
 		padding-top: 95px;
 	}
 }
 
 @media (max-width: 480px){
-	#app-layout #content{
+	#app-layout #app-content{
 		padding-top: 65px;
 	}
 }

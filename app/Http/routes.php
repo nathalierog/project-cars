@@ -27,11 +27,22 @@ Route::get('about', function(){
 
 Route::auth();
 
-Route::group(['prefix' => 'cars'], function () {
+Route::group(['prefix' => 'backpanel'], function () {
 	Route::get('overview', function () {
-		return view('cars.overview');
+		return view('backpanel.overview');
 	});
-	Route::get('details', function () {
-		return view('cars.details');
+	Route::get('cars', function () {
+		return view('backpanel.cars');
+	});
+	Route::get('addcar', function () {
+		return view('backpanel.addcar');
+	});
+	Route::get('editcar', function () {
+		return view('backpanel.editcar');
+	});
+	Route::get('deletecar', function () {
+		return view('backpanel.deletecar');
 	});
 });
+
+

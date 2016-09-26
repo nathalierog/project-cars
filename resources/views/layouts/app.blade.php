@@ -30,7 +30,7 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                             @if (Auth::user()->role >= 2)
-                                <li><a href="{{ url('/backpanel') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
+                                <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
                             @endif
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
                             </ul>
@@ -75,7 +75,7 @@
                             </a>
                             <ul class="dropdown-menu" role="menu">
                             @if (Auth::user()->role >= 2)
-                                <li><a href="{{ url('/backpanel') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
+                                <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
                             @endif
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
                             </ul>
@@ -86,7 +86,7 @@
             </div>
         </div>
     </header>
-    <section id="content">
+    <section id="app-content">
         @yield('content')
     </section>
     <footer id="app-default-footer">
