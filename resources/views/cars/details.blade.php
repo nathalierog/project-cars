@@ -12,7 +12,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h2 class="h4 text-center-xs text-center-sm">
-                            <b>Naam auto</b>
+                            <b>{{$car->brand}} {{$car->model}}</b>
                         </h2>
                     </div>
                     <div class="panel-body">
@@ -62,48 +62,48 @@
                         
                     </div>
                     <div class="col-sm-2 text-right col-sm-push-4">
-                        <p class="h2">€34543,-</p>
+                        <p class="h2">€{{$car->price}},-</p>
                     </div>
                     <div class="col-sm-4 col-sm-pull-2">
                         <div class="row">
                             <div class="col-xs-6"><strong>merk:</strong></div>
-                            <div class="col-xs-6">Fiat</div>
+                            <div class="col-xs-6">{{$car->brand}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>type:</strong></div>
-                            <div class="col-xs-6">Multipla</div>
+                            <div class="col-xs-6">{{$car->model}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>kilometerstand:</strong></div>
-                            <div class="col-xs-6">354464</div>
+                            <div class="col-xs-6">{{$car->mileage}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>bouwjaar:</strong></div>
-                            <div class="col-xs-6">2142</div>
+                            <div class="col-xs-6">{{$car->year}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>kleur:</strong></div>
-                            <div class="col-xs-6">oranje</div>
+                            <div class="col-xs-6">{{$car->color}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>koppeling:</strong></div>
-                            <div class="col-xs-6">handgeschakeld</div>
+                            <div class="col-xs-6">{{$car->transmission}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>body:</strong></div>
-                            <div class="col-xs-6">uhm idk</div>
+                            <div class="col-xs-6">{{$car->body}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>brandstof:</strong></div>
-                            <div class="col-xs-6">jet fuel</div>
+                            <div class="col-xs-6">{{$car->fuel}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>kenteken:</strong></div>
-                            <div class="col-xs-6">12-asd-1</div>
+                            <div class="col-xs-6">{{$car->license_plate}}</div>
                         </div>
                     </div>
                     <div class="col-xs-12"><strong>beschrijving:</strong>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi suscipit adipisci est, assumenda aspernatur praesentium, iusto fugiat dolorum similique, vero quod provident hic quaerat numquam, doloribus dolores. Rerum, minus, pariatur. ipsum dolor sit amet, consectetur adipisicing elit. Asperiores illum neque, magni repudiandae animi quisquam unde nostrum dolorem labore nihil expedita aliquam aspernatur suscipit tenetur possimus officia modi laboriosam soluta? ipsum dolor sit amet, consectetur adipisicing elit. Fugit hic vel quos eaque quo perferendis repudiandae illo, quis dicta atque voluptatibus voluptatem iusto distinctio, blanditiis, impedit necessitatibus. Consectetur, maxime quos. ipsum dolor sit amet, consectetur adipisicing elit. Illum amet inventore voluptatem quo harum similique odio cum et, culpa quam repellendus deleniti est voluptate, vitae a magnam tenetur maxime natus! ipsum dolor sit amet, consectetur adipisicing elit. Vitae dolores eos animi at, aliquam. Dignissimos itaque eaque culpa non voluptates nemo laboriosam rerum veritatis voluptatibus nihil, porro, dolorum iste! Fuga! ipsum dolor sit amet, consectetur adipisicing elit. Eligendi, reprehenderit natus quaerat! Aperiam, sequi omnis accusantium fuga dolorem quis vero mollitia, laborum illum incidunt tempore perspiciatis atque distinctio nisi eius! ipsum dolor sit amet, consectetur adipisicing elit. Porro assumenda fuga, similique, numquam rerum, eveniet esse quasi qui mollitia consequatur voluptatem iste illum officia necessitatibus doloremque aperiam. Obcaecati iste, reprehenderit? ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, nemo. Ipsum laboriosam, ex repellat voluptas minima repudiandae quas totam modi illo nobis suscipit dignissimos incidunt veniam, voluptatibus, facere, recusandae aspernatur.</p></div>
+                    <p>{{$car->description}}</p></div>
                 </div>
             </div>
         </div>
