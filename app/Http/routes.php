@@ -45,4 +45,9 @@ Route::group(['prefix' => 'backpanel'], function () {
 	});
 });
 
+Route::group(['prefix' => 'cars'], function ()
+{
+	Route::get('/', 'CarsController@index');	
+});
+
 
