@@ -28,21 +28,21 @@ Route::get('about', function(){
 Route::auth();
 
 Route::group(['prefix' => 'backpanel'], function () {
-	Route::get('overview', function () {
+	Route::get('overview', ['middleware' => 'isBoth', function () {
 		return view('backpanel.overview');
-	});
-	Route::get('cars', function () {
+	}]);
+	Route::get('cars', ['middleware' => 'isBoth', function () {
 		return view('backpanel.cars');
-	});
-	Route::get('addcar', function () {
+	}]);
+	Route::get('addcar', ['middleware' => 'isBoth', function () {
 		return view('backpanel.addcar');
-	});
-	Route::get('editcar', function () {
+	}]);
+	Route::get('editcar', ['middleware' => 'isBoth', function () {
 		return view('backpanel.editcar');
-	});
-	Route::get('deletecar', function () {
+	}]);
+	Route::get('deletecar', ['middleware' => 'isBoth', function () {
 		return view('backpanel.deletecar');
-	});
+	}]);
 });
 
 
