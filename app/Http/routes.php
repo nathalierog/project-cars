@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('contact', function(){
+	return view('contact');
+});
+
+Route::post('contact_request','ContactController@getContactForm');
+
+Route::get('about', function(){
+	return view('about-us');
+});
+
 Route::auth();
 
 Route::group(['prefix' => 'cars'], function () {
