@@ -1,5 +1,5 @@
 function togglemobilemenu(){
-	if ($(window).width() >= 768){
+	if ($(window).width() >= 750){
 		$('#app-sticky-navbar').removeClass('navbar-fixed-top');
 		$('#app-sticky-navbar').affix({
 		  	offset: {
