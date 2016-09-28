@@ -28,7 +28,7 @@ class ContactController extends Controller
 
 		Mail::send('emails.contact-mail', $data, function ($message) use ($email, $name)
         {
-            $message->from('contact@jwhuisman.nl', 'Website');
+            // $message->from('contact@jwhuisman.nl', 'Website');
             $message->to('contact@jwhuisman.nl')->replyTo($email, $name);
             $message->subject('Mail via website by ' . $name);
 
