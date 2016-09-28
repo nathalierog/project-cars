@@ -67,9 +67,9 @@
 
             {{ Form:: close() }}
         </div>
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                @if (count($errors) > 0)
+        <div class="col-md-10 col-md-offset-1">
+            @if (count($errors) > 0)
+                <div class="row">
                     <div class="col-md-12">
                         <div class="alert alert-danger">
                             <ul>
@@ -79,8 +79,8 @@
                             </ul>
                         </div>
                     </div>
-                @endif
-            </div>
+                </div>
+            @endif
         </div>
     </div>
 </div>
