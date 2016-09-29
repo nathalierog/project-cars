@@ -27,22 +27,23 @@ Route::get('about', function(){
 
 Route::auth();
 
-Route::group(['prefix' => 'backpanel'], function () {
-	Route::get('overview', ['middleware' => 'isBoth', function () {
+Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
+	Route::get('/', function () {
 		return view('backpanel.overview');
-	}]);
-	Route::get('cars', ['middleware' => 'isBoth', function () {
-		return view('backpanel.cars');
-	}]);
-	Route::get('addcar', ['middleware' => 'isBoth', function () {
+	});
+	Route::get('overview', function () {
+		return redirect('backpanel');
+	});
+	Route::get('cars', 'AdminController@cars');
+	Route::get('addcar', function () {
 		return view('backpanel.addcar');
-	}]);
-	Route::get('editcar', ['middleware' => 'isBoth', function () {
+	});
+	Route::get('editcar/{id}', function () {
 		return view('backpanel.editcar');
-	}]);
-	Route::get('deletecar', ['middleware' => 'isBoth', function () {
+	});
+	Route::get('deletecar/{id}', function () {
 		return view('backpanel.deletecar');
-	}]);
+	});
 });
 
 Route::group(['prefix' => 'cars'], function ()
