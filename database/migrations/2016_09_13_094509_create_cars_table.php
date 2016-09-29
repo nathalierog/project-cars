@@ -30,6 +30,7 @@ class CreateCarsTable extends Migration
             $table->boolean('sold')->default('0');
             $table->integer('spend_on')->comment("the amount of money that is spend on this car")->nullable();
             $table->integer('sold_for')->comment("the amount of money received for this car")->nullable();
+            $table->timestamps();
         });
     }
 
