@@ -14,4 +14,9 @@ class AdminController extends Controller
     	$cars = car::all();
         return view('backpanel.cars', ['cars' => $cars]);
     }
+
+    public function setCar()
+    {
+
+    }
 }
