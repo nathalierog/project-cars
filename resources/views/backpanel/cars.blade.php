@@ -9,13 +9,16 @@
 					<a href="{{ url('/backpanel/addcar') }}"><i class="fa fa-plus fa-btn" aria-hidden="true"></i>Auto toevoegen</a>
 				</div>
 			    <ol class="list-group">
-			    @for ($i = 0; $i < 20; $i++)
+			    @foreach ($cars as $car)
 		        	<li class="list-group-item">
-		        	{{$i}}
-		        		<a href="{{ url('/backpanel/deletecar') }}"><span class="pull-right fa fa-trash fa-btn"></span>
-		        		<a href="{{ url('/backpanel/editcar') }}"><span class="pull-right fa fa-pencil fa-btn"></span>
+		        	{{$car->id}}
+		        	{{$car->brand}}
+		        	{{$car->model}}
+		        	uit {{$car->year}}
+		        		<a href="{{ url('/backpanel/deletecar/' . $car->id) }}"><span class="pull-right fa fa-trash fa-btn"></span>
+		        		<a href="{{ url('/backpanel/editcar/' . $car->id) }}"><span class="pull-right fa fa-pencil fa-btn"></span>
 		        	</li>
-			    @endfor
+			    @endforeach
 			    </ol>
 		    </div>
 		</div>
