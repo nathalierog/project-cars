@@ -15,8 +15,23 @@ class AdminController extends Controller
         return view('backpanel.cars', ['cars' => $cars]);
     }
 
-    public function setCar()
-    {
-
+    public function setCar(Request $request)
+    {	
+    	$this->validate($request, [
+    		'brand' => 'Required',
+    		'model' => 'Required',
+    		'keyword' => '',
+    		'price' => 'Required',
+    		'mileage' => 'Required',
+    		'year' => 'Required',
+    		'color' => 'Required',
+    		'transmission' => 'Required',
+    		'body' => 'Required',
+    		'fuel' => 'Required',
+    		'license_plate' => 'Required',
+    		'main_img' => '',
+    		'description' => 'Required',
+    		]);
+    	return response()->json($request);
     }
 }

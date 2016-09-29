@@ -44,6 +44,7 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 	Route::get('deletecar/{id}', function () {
 		return view('backpanel.deletecar');
 	});
+	Route::post('addcar','AdminController@setCar');
 });
 
 Route::group(['prefix' => 'cars'], function ()
@@ -52,4 +53,4 @@ Route::group(['prefix' => 'cars'], function ()
 	Route::get('details/{id}', 'CarsController@show');	
 });
 
-Route::post('create_car','AdminController@setCar');
+
