@@ -52,4 +52,4 @@ Route::group(['prefix' => 'cars'], function ()
 	Route::get('details/{id}', 'CarsController@show');	
 });
 
-
+Route::post('create_car','AdminController@setCar');
