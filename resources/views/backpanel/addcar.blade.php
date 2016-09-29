@@ -16,7 +16,7 @@
 					    		<div class="row">
 							      	<label for="brand" class="col-sm-12 col-form-label">Merk</label>
 							      	<div class="col-sm-12">
-							        	<input type="text" class="form-control" id="brand" placeholder="Merk">
+							        	<input type="text" class="form-control" name="brand" id="brand" placeholder="Merk" value="{{ old('brand')}}">
 							      	</div>
 							    </div>
 						    </div>
@@ -24,7 +24,7 @@
 						    	<div class="row">
 							      	<label for="model" class="col-sm-12 col-form-label">Model</label>
 							      	<div class="col-sm-12">
-							        	<input type="text" class="form-control" id="model" placeholder="Model">
+							        	<input type="text" class="form-control" name="model" id="model" placeholder="Model" value="{{ old('model')}}">
 							      	</div>
 							    </div>
 							</div>
@@ -32,7 +32,7 @@
 					    <div class="form-group row">
 				      		<label for="keyword" class="col-sm-12 col-form-label">Keyword(s)</label>
 					      	<div class="col-sm-12">
-					        	<input type="text" class="form-control" id="keyword" placeholder="Keyword(s)">
+					        	<input type="text" class="form-control" name="keyword" id="keyword" placeholder="Keyword(s)" value="{{ old('keyword')}}">
 					      	</div>
 					    </div>
 					    <hr>
@@ -41,7 +41,7 @@
 					    		<div class="row">
 							      	<label for="price" class="col-sm-12 col-form-label">Prijs</label>
 							      	<div class="col-sm-12">
-							        	<input type="number" class="form-control" id="price" placeholder="Prijs (€)">
+							        	<input type="number" class="form-control" name="price" id="price" placeholder="Prijs (€)" value="{{ old('price')}}">
 							      	</div>
 							    </div>
 							</div>
@@ -49,7 +49,7 @@
 					    		<div class="row">
 						    		<label for="mileage" class="col-sm-12 col-form-label">Kilometerstand</label>
 							      	<div class="col-sm-12">
-							        	<input type="number" class="form-control" id="mileage" placeholder="Kilometerstand (km)">
+							        	<input type="number" class="form-control" name="mileage" id="mileage" placeholder="Kilometerstand (km)" value="{{ old('mileage')}}">
 							      	</div>
 					    		</div>
 					    	</div>
@@ -57,7 +57,7 @@
 					    		<div class="row">
 						    		<label for="year" class="col-sm-12 col-form-label">Bouwjaar</label>
 							      	<div class="col-sm-12">
-							        	<input type="number" class="form-control" id="year" placeholder="Bouwjaar">
+							        	<input type="number" class="form-control" name="year" id="year" placeholder="Bouwjaar" value="{{ old('year')}}">
 							      	</div>
 					    		</div>
 					    	</div>
@@ -65,7 +65,7 @@
 					    		<div class="row">
 					    			<label for="color" class="col-sm-12 col-form-label">Kleur</label>
 							      	<div class="col-sm-12">
-							        	<input type="text" class="form-control" id="color" placeholder="kleur">
+							        	<input type="text" class="form-control" name="color" id="color" placeholder="kleur"  value="{{ old('color')}}">
 							      	</div>
 					    		</div>
 					    	</div>
@@ -75,7 +75,7 @@
 					    		<div class="row">
 					    			<label for="transmission" class="col-sm-12 col-form-label">Transmissie</label>
 							      	<div class="col-sm-12">
-							        	<select class="form-control" id="transmission">
+							        	<select class="form-control" name="transmission" id="transmission">
 							        		<option value="Automaat">Automaat</option>
 							        		<option value="Handgeschakeld">Handgeschakeld</option>
 							        	</select>
@@ -86,7 +86,7 @@
 					    		<div class="row">
 						    		<label for="body" class="col-sm-12 col-form-label">Carrosserie</label>
 							      	<div class="col-sm-12">
-							        	<input type="text" class="form-control" id="body" placeholder="Carrosserie">
+							        	<input type="text" class="form-control" name="body" id="body" placeholder="Carrosserie" value="{{ old('body')}}">
 							      	</div>
 					    		</div>
 					    	</div>
@@ -94,7 +94,7 @@
 					    		<div class="row">
 						    		<label for="fuel" class="col-sm-12 col-form-label">Brandstof</label>
 							      	<div class="col-sm-12">
-							        	<select class="form-control" id="fuel">
+							        	<select class="form-control" name="fuel" id="fuel">
 							        		<option value="Benzine">Benzine</option>
 							        		<option value="Benzine">Diesel</option>
 							        		<option value="Elekstrisch">Elekstrisch</option>
@@ -110,7 +110,7 @@
 					    		<div class="row">
 						    		<label for="license_plate" class="col-sm-12 col-form-label">Nummerplaat</label>
 							      	<div class="col-sm-12">
-							        	<input type="text" class="form-control" id="license_plate" placeholder="Nummerplaat">
+							        	<input type="text" class="form-control" name="license_plate" id="license_plate" placeholder="Nummerplaat" value="{{ old('license_plate')}}">
 							      	</div>
 					    		</div>
 					    	</div>
@@ -119,13 +119,13 @@
 					    <div class="form-group row">
 					      	<label for="main_img" class="col-sm-12 col-form-label">Main image</label>
 					      	<div class="col-sm-12">
-					        	<input type="text" class="form-control" id="main_img" placeholder="Main image">
+					        	<input type="text" class="form-control" name="main_img" id="main_img" placeholder="Main image" value="{{ old('main_img')}}">
 					      	</div>
 					    </div>
 					    <div class="form-group row">
 					      	<label for="description" class="col-sm-12 col-form-label">Beschrijving</label>
 					      	<div class="col-sm-12">
-					        	<textarea class="form-control" id="description" placeholder="Beschrijving"></textarea>
+					        	<textarea class="form-control" name="description" id="description" placeholder="Beschrijving">{{ old('description')}}</textarea>
 					      	</div>
 			    		</div>
 			    	</div>
