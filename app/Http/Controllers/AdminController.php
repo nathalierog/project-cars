@@ -32,6 +32,7 @@ class AdminController extends Controller
     		'main_img' => '',
     		'description' => 'Required',
     		]);
+    	car::create($request->all());
     	return response()->json($request);
     }
 }
