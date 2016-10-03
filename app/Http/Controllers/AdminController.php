@@ -33,6 +33,12 @@ class AdminController extends Controller
     		'description' => 'Required',
     		]);
     	car::create($request->all());
-    	return response()->json($request);
+    	return redirect('backpanel/cars');
+    }
+
+    public function deleteCar($id)
+    {
+    	car::destroy($id);
+    	return redirect('backpanel/cars');
     }
 }
