@@ -15,8 +15,8 @@
 		        	{{$car->brand}}
 		        	{{$car->model}}
 		        	uit {{$car->year}}
-		        		<a href="{{ url('/backpanel/deletecar/' . $car->id) }}"><span class="pull-right fa fa-trash fa-btn"></span>
-		        		<a href="{{ url('/backpanel/editcar/' . $car->id) }}"><span class="pull-right fa fa-pencil fa-btn"></span>
+		        		<a href="{{ url('/backpanel/deletecar/' . $car->id) }}"><span class="pull-right fa fa-trash fa-btn"></span></a>
+		        		<a href="{{ url('/backpanel/editcar/' . $car->id) }}"><span class="pull-right fa fa-pencil fa-btn"></span></a>
 		        	</li>
 			    @endforeach
 			    </ol>
