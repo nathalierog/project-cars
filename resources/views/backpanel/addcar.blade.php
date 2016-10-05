@@ -76,8 +76,8 @@
 					    			<label for="transmission" class="col-sm-12 col-form-label">Transmissie</label>
 							      	<div class="col-sm-12">
 							        	<select class="form-control" name="transmission" id="transmission">
-							        		<option value="Automaat">Automaat</option>
-							        		<option value="Handgeschakeld">Handgeschakeld</option>
+							        		<option value="Automaat" {{ old('transmission') == "Automaat" ? "selected" : ""  }}>Automaat</option>
+							        		<option value="Handgeschakeld" {{ old('transmission') == "Handgeschakeld" ? "selected" : ""  }}>Handgeschakeld</option>
 							        	</select>
 					      			</div>
 					    		</div>
@@ -95,13 +95,13 @@
 						    		<label for="fuel" class="col-sm-12 col-form-label">Brandstof</label>
 							      	<div class="col-sm-12">
 							        	<select class="form-control" name="fuel" id="fuel">
-							        		<option value="Benzine">Benzine</option>
-							        		<option value="Benzine">Diesel</option>
-							        		<option value="Elekstrisch">Elekstrisch</option>
-							        		<option value="Hybryde">Hybryde</option>
-											<option value="LPG">LPG</option>
-							        		<option value="LPG-G3">LPG-G3</option>
-							        		<option value="Aardgas (CNG)">Aardgas (CNG)</option>
+							        		<option value="Benzine" {{ old('fuel') == "Benzine" ? "selected" : ""  }}>Benzine</option>
+							        		<option value="Diesel" {{ old('fuel') == "Diesel" ? "selected" : ""  }}>Diesel</option>
+							        		<option value="Elekstrisch" {{ old('fuel') == "Elekstrisch" ? "selected" : ""  }}>Elekstrisch</option>
+							        		<option value="Hybryde" {{ old('fuel') == "Hybryde" ? "selected" : ""  }}>Hybryde</option>
+											<option value="LPG" {{ old('fuel') == "LPG" ? "selected" : ""  }}>LPG</option>
+							        		<option value="LPG-G3" {{ old('fuel') == "LPG-G3" ? "selected" : ""  }}>LPG-G3</option>
+							        		<option value="Aardgas (CNG)" {{ old('fuel') == "Aardgas (CNG)" ? "selected" : ""  }}>Aardgas (CNG)</option>
 							        	</select>
 							      	</div>
 					    		</div>
