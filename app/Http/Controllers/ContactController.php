@@ -34,6 +34,6 @@ class ContactController extends Controller
 
         });
 
-        return response()->json(['message' => 'Request completed']);		
+        return redirect('/');	
     }
 }

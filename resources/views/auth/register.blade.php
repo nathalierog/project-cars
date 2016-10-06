@@ -65,7 +65,19 @@
                                 @endif
                             </div>
                         </div>
-
+                        @if ($errors->has('password'))
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-4">
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            <li>Het wachtwoord moet minimaal 1 hoofdletter bevatten.</li>
+                                            <li>Het wachtwoord moet mimimaal 1 cijfer bevatten.</li>
+                                            <li>Het wachtwoord moet minimaal 6 tekens lang zijn.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        @endif
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
