@@ -52,3 +52,9 @@ html, body, .container-fluid, .row{
 #backpanel-layout #backpanel-content{
 	padding-top: 15px;
 }
+
+#backpanel-layout #backpanel-content textarea{
+    resize: vertical;
+    min-height: 50px;
+    max-height: 150px;
+}
