@@ -15,8 +15,8 @@ class ContactController extends Controller
         $this->validate($request, [
     		'name' => 'required',
             'email' => 'required|email',
-            'subject' => 'required|min:5',
-            'message' => 'required|min:5'
+            'subject' => 'required|min:5|max:150',
+            'message' => 'required|min:5|max:2500'
 		]);
 		
         $name = $request->name;
@@ -26,14 +26,20 @@ class ContactController extends Controller
 
         $data = array('name'=>$name, 'email'=>$email, 'content'=>$content, 'title'=>$title);
 
-		Mail::send('emails.contact-mail', $data, function ($message) use ($email, $name)
+		Mail::send(['emails.contact-mail','emails.plain.contact-mail'], $data, function ($message) use ($email, $name)
         {
-            // $message->from('contact@jwhuisman.nl', 'Website');
-            $message->to('contact@jwhuisman.nl')->replyTo($email, $name);
+            $message->to('contact@example.com')->replyTo($email, $name);
             $message->subject('Mail via website by ' . $name);
 
         });
 
-        return redirect('/');	
+        Mail::send(['emails.confirm-mail','emails.plain.confirm-mail'], $data, function ($message) use ($email, $name)
+        {
+            $message->to($email)->replyTo('contact@example.com', 'project-cars');
+            $message->subject('Bevestiging van uw bericht op project-cars');
+
+        });
+
+        return back();	
     }
 }
