@@ -1,7 +1,7 @@
 Goedendag, {{$name}}
 Dit is een bevestiging van u mail op project-cars
 
-{{$title}}
-{{$content}}
+onderwerp: {{$title}}
+-------------------
 
-Dit is een automatisch bericht en daarom niet ondertekend.
+{{$content}}
