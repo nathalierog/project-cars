@@ -19,6 +19,10 @@ Route::get('contact', function(){
 	return view('contact');
 });
 
+Route::get('search', function(){
+	return view('search');
+});
+
 Route::post('contact_request','ContactController@getContactForm');
 
 Route::get('about', function(){

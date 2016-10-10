@@ -6,20 +6,38 @@
 			<div class="panel-default">
 				<div class="panel-heading">
 					<h4>Overzicht van alle auto's</h4>
-					<a href="{{ url('/backpanel/addcar') }}"><i class="fa fa-plus fa-btn" aria-hidden="true"></i>Auto toevoegen</a>
+					<a href="{{ url('/backpanel/addcar') }}"></i>Auto toevoegen</a>
 				</div>
-			    <ol class="list-group">
-			    @foreach ($cars as $car)
-		        	<li class="list-group-item">
-		        	{{$car->id}}
-		        	{{$car->brand}}
-		        	{{$car->model}}
-		        	uit {{$car->year}}
-		        		<a href="{{ url('/backpanel/deletecar/' . $car->id) }}"><span class="pull-right fa fa-trash fa-btn"></span></a>
-		        		<a href="{{ url('/backpanel/editcar/' . $car->id) }}"><span class="pull-right fa fa-pencil fa-btn"></span></a>
-		        	</li>
-			    @endforeach
-			    </ol>
+				<div class="table-responsive">
+				    <table class="table table-striped table-bordered tablesorter">
+					    <thead>
+					      	<tr>
+						        <th>ID</th>
+						        <th>Brand</th>
+						        <th>Model</th>
+						        <th>Jaar</th>
+						        <th></th>
+						        <th></th>
+					      	</tr>
+					    </thead>
+					    <tbody>
+						    @foreach ($cars as $car)
+					        	<tr>
+									<td>{{$car->id}}</td>
+								    <td>{{$car->brand}}</td>
+								    <td>{{$car->model}}</td>
+								    <td>{{$car->year}}</td>
+								    <td>
+								    	<a href="{{ url('/backpanel/editcar/' . $car->id) }}">Bewerken</a>
+							  		</td>
+								    <td>
+								    	<a href="{{ url('/backpanel/deletecar/' . $car->id) }}">Verwijderen</a>
+								    </td>
+								</tr>   
+						    @endforeach
+						</tbody>
+					</table>
+				</div>
 		    </div>
 		</div>
 	</div>
