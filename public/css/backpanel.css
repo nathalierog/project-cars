@@ -6,6 +6,14 @@ html, body, .container-fluid, .row{
     height: 100%;
 }
 
+#backpanel-layout .margin-top{
+	margin-top: 50px;
+}
+
+#backpanel-layout .fa-btn{
+	margin-right: 5px;
+}
+
 /*#backpanel-sticky-navbar*/
 #backpanel-layout #backpanel-sticky-navbar .navbar-brand > img{
     height: 100%;
@@ -41,14 +49,6 @@ html, body, .container-fluid, .row{
 }
 
 /*#backpanel-content*/
-#backpanel-layout .margin-top{
-	margin-top: 50px;
-}
-
-#backpanel-layout .fa-btn{
-	margin-right: 5px;
-}
-
 #backpanel-layout #backpanel-content{
 	padding-top: 15px;
 }
@@ -57,4 +57,16 @@ html, body, .container-fluid, .row{
     resize: vertical;
     min-height: 50px;
     max-height: 150px;
+}
+
+#backpanel-layout #backpanel-content thead th:hover{
+	cursor: pointer;
+}
+
+#backpanel-layout #backpanel-content thead th.headerSortDown, #backpanel-layout #backpanel-content thead th.headerSortUp{
+	background: #c9c9c9;
+}
+
+#backpanel-layout #backpanel-content tbody tr:hover{
+	background: #e9e9e9;
 }
