@@ -55,7 +55,7 @@
             </div>
             <div class="collapse navbar-collapse navbar-padding">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ url('/zoeken') }}" data-toggle="tooltip" data-placement="left" title="Zoeken"><i class="fa fa-car fa-fw" aria-hidden="true"></i>Zoeken</a></li>
+                    <li><a href="{{ url('/search') }}" data-toggle="tooltip" data-placement="left" title="Zoeken"><i class="fa fa-car fa-fw" aria-hidden="true"></i>Zoeken</a></li>
                 </ul>
             </div>
             <div class="collapse navbar-collapse" id="app-mobile-menu">
@@ -81,7 +81,7 @@
                             </ul>
                         </li>
                     @endif
-                    <li><a href="{{ url('/zoeken') }}" title="Zoeken">Zoeken</a></li>
+                    <li><a href="{{ url('/search') }}" title="Zoeken">Zoeken</a></li>
                 </ul>
             </div>
         </div>

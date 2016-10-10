@@ -59,6 +59,7 @@
     <script src="{{ URL::asset('assets/jquery/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('assets/jquery-ui/jquery-ui.min.js') }}"></script>
     <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/tablesorter/jquery.tablesorter.min.js') }}"></script>
     <script src="{{ URL::asset('js/backpanel.js') }}"></script>
 </body>
 </html>
