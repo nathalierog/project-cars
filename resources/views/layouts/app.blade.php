@@ -22,11 +22,11 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <div class="input-group" id="app-quick-search" style="">
+                    <div class="input-group" id="app-quick-search">
                         <input type="text" class="form-control" placeholder="Snel zoeken...">
-                        <div class="input-group-btn">
+                        <span class="input-group-btn">
                             <button class="btn btn-secondary">Go</button>
-                        </div>
+                        </span>
                     </div>
                 </li>
                     @if (Auth::guest())
