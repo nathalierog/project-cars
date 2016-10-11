@@ -21,6 +21,14 @@
                     <li><a href="{{ url('/cars') }}" data-toggle="tooltip" data-placement="bottom" title="Voertuigen"><i class="fa fa-car fa-btn" aria-hidden="true"></i>Voertuigen</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="input-group" id="app-quick-search" style="">
+                        <input type="text" class="form-control" placeholder="Snel zoeken...">
+                        <div class="input-group-btn">
+                            <button class="btn btn-secondary">Go</button>
+                        </div>
+                    </div>
+                </li>
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}" data-toggle="tooltip" data-placement="bottom" title="Inloggen"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Inloggen</a></li>
                         <li><a href="{{ url('/register') }}" data-toggle="tooltip" data-placement="bottom" title="Registreren">Registreren</a></li>

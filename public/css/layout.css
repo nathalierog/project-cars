@@ -48,6 +48,20 @@ body{
 	margin-right: 5px;
 }
 
+#app-layout #app-quick-search{
+	margin-top: 7.5px;
+	margin-bottom: 7.5px;
+}
+
+#app-layout #app-quick-search button{
+	background: #999;
+	color: white;
+}
+
+#app-layout #app-quick-search button:hover{
+	background: #808080;
+}
+
 @media (max-width: 768px){
 	#app-layout #app-default-navbar{
 		display: none;
