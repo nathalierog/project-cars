@@ -18,6 +18,7 @@
                     <li><a href="{{ url('/') }}" data-toggle="tooltip" data-placement="bottom" title="Home"><i class="fa fa-home fa-fw" aria-hidden="true"></i></a></li>
                     <li><a href="{{ url('/about') }}" data-toggle="tooltip" data-placement="bottom" title="Over ons">Over ons</a></li>
                     <li><a href="{{ url('/contact') }}" data-toggle="tooltip" data-placement="bottom" title="Contact"><i class="fa fa-phone fa-fw" aria-hidden="true"></i>Contact</a></li>
+                    <li><a href="{{ url('/cars') }}" data-toggle="tooltip" data-placement="bottom" title="Voertuigen"><i class="fa fa-car fa-btn" aria-hidden="true"></i>Voertuigen</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
@@ -63,6 +64,7 @@
                     <li><a href="{{ url('/') }}" title="Home">Home</a></li>
                     <li><a href="{{ url('/about') }}" title="Over ons">Over ons</a></li>
                     <li><a href="{{ url('/contact') }}" title="Contact">Contact</a></li>
+                    <li><a href="{{ url('/cars') }}" title="Voertuigen">Voertuigen</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (Auth::guest())
