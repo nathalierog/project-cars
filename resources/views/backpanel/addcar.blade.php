@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-md-10 col-md-offset-1">
 
-			{{ Form:: open(array('action' => 'AdminController@setCar')) }} 
+			{{ Form:: open(array('action' => 'AdminController@setCar','files' => true)) }} 
 
 				<div class="panel panel-default">
   					<div class="panel-heading">
@@ -120,6 +120,12 @@
 					      	<label for="main_img" class="col-sm-12 col-form-label">Main image</label>
 					      	<div class="col-sm-12">
 					        	<input type="text" class="form-control" name="main_img" id="main_img" placeholder="Main image" value="{{ old('main_img')}}">
+					      	</div>
+					    </div>
+					    <div class="form-group row">
+					      	<label for="img_upload" class="col-sm-12 col-form-label">Main image</label>
+					      	<div class="col-sm-12">
+					        	<input type="file" class="form-control" multiple accept="image/*" name="img_uploads[]" id="img_upload" placeholder="Main image" value="">
 					      	</div>
 					    </div>
 					    <div class="form-group row">
