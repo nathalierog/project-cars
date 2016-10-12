@@ -25,9 +25,21 @@ class AdminController extends Controller
     		'license_plate' => 'Required',
     		'main_img' => '',
     		'description' => 'Required',
+            'img_uploads' => 'Required',
+            'img_uploads.*' => 'image|max:3000'
     		]);
 	}
+    private function storeImages($for,Request $request)
+    {
+            $prefix = $request->brand."_".$request->model."_".$for."_";
 
+            for ($i=0; $i < count($request->img_uploads); $i++) { 
+
+                $imgname = $prefix . $i .".". $request->file('img_uploads.'.$i)->extension();
+
+                $request->file('img_uploads.'.$i)->move(public_path('files'), $imgname);
+            }
+    }
     public function cars()
     {
     	$cars = car::all();
@@ -36,8 +48,11 @@ class AdminController extends Controller
 
     public function setCar(Request $request)
     {	
-    	$this->validator($request);
-    	car::create($request->all());
+        
+    	$result = $this->validator($request);
+        
+    	$model = car::create($request->except('img_uploads'));
+            $this->storeImages($model->id, $request);
     	return redirect('backpanel/cars');
     }
     public function editCarForm($id)
