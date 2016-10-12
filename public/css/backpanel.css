@@ -63,10 +63,6 @@ html, body, .container-fluid, .row{
 	cursor: pointer;
 }
 
-#backpanel-layout #backpanel-content thead th.headerSortDown, #backpanel-layout #backpanel-content thead th.headerSortUp{
-	background: #c9c9c9;
-}
-
 #backpanel-layout #backpanel-content tbody tr:hover{
 	background: #e9e9e9;
 }

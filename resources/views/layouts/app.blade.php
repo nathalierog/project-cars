@@ -25,7 +25,7 @@
                     <div class="input-group" id="app-quick-search">
                         <input type="text" class="form-control" placeholder="Snel zoeken...">
                         <span class="input-group-btn">
-                            <button class="btn btn-secondary">Go</button>
+                            <button class="btn btn-secondary"><i class="fa fa-search fa-fw" aria-hidden="true"></i></button>
                         </span>
                     </div>
                 </li>

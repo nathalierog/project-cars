@@ -7,7 +7,9 @@
     <title>Project CARS</title>
     <link rel="stylesheet" href="{{ URL::asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('css/backpanel.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/tablesorter/css/theme.bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('assets/tablesorter/css/theme.pager.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/backpanel.css') }}" rel="stylesheet">
     @yield('header') 
 </head>
 <body id="backpanel-layout">
@@ -59,7 +61,9 @@
     <script src="{{ URL::asset('assets/jquery/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('assets/jquery-ui/jquery-ui.min.js') }}"></script>
     <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/tablesorter/jquery.tablesorter.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/tablesorter/js/jquery.tablesorter.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/tablesorter/js/jquery.tablesorter.widgets.min.js') }}"></script>  
+    <script src="{{ URL::asset('assets/tablesorter/js/jquery.tablesorter.pager.min.js') }}"></script>
     <script src="{{ URL::asset('js/backpanel.js') }}"></script>
 </body>
 </html>
