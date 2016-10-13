@@ -123,9 +123,9 @@
 					      	</div>
 					    </div>
 					    <div class="form-group row">
-					      	<label for="img_upload" class="col-sm-12 col-form-label">Main image</label>
+					      	<label for="img_upload" class="col-sm-12 col-form-label">upload image</label>
 					      	<div class="col-sm-12">
-					        	<input type="file" class="form-control" multiple accept="image/*" name="img_uploads[]" id="img_upload" placeholder="Main image" value="">
+					        	<input type="file" class="form-control" multiple accept="image/*" name="img_uploads[]" id="img_upload" placeholder="upload image" value="{{ old('img-uploads')}}">
 					      	</div>
 					    </div>
 					    <div class="form-group row">
