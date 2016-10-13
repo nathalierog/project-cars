@@ -16,7 +16,7 @@ class CreateImageTable extends Migration
             $table->increments('id');
             $table->integer('car_id');
             $table->string('path');
-            $table->integer('priority');
+            $table->integer('priority')->default(100);
             $table->timestamps();
         });
     }
