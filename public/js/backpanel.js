@@ -29,13 +29,16 @@ function tablesorter(){
       zebra : ["even", "odd"],
       filter_reset : ".reset",
       filter_cssFilter: "form-control",
+    },
+    headers:{
+      4: {sorter: false, filter: false},
+      5: {sorter: false, filter: false}
     }
   })
   .tablesorterPager({
     container: $(".ts-pager"),
     removeRows: false,
     output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
-
   });
 }
 
