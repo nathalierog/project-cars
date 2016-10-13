@@ -8,6 +8,25 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
+            <div class="results-info">
+                <?php 
+                    if($url = Request::only('term')) {
+                        if($cars->count() >= 1) {
+                            echo 
+                            '<div class="alert alert-info text-center">
+                                There are <b>'.$cars->count().'</b> result(s) with <b>'.$url['term'].'</b> found.
+                            </div>';
+                        } else {
+                            echo 
+                            '<div class="alert alert-danger text-center">
+                                <strong>Let op!</strong><br>
+                                Er zijn geen zoek resultaten gevonden op <b>'.$url['term'].'</b>.<br>
+                                Klik <a href="/">hier</a> om naar de uitgebreide zoek pagina te gaan.
+                            </div>';
+                        }
+                    }
+                ?>
+            </div>
         @foreach ($cars as $car)
             <a href="{{ url('cars/details/' . $car->id)}}">
                 <div class="col-md-12 col-sm-6">
@@ -39,6 +58,9 @@
                 </div>
             </a>
         @endforeach
+            <div class="text-center">
+                {{ $cars->appends(Request::only('term'))->links() }}
+            </div>
         </div>
     </div>
 </div>

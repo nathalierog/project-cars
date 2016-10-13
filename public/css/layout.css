@@ -52,6 +52,7 @@ body{
 	margin-top: 7.5px;
 	margin-bottom: 7.5px;
 	max-width: 200px;
+	margin-right: 7.5px;
 }
 
 #app-layout #app-quick-search button{
@@ -165,4 +166,35 @@ body{
 /*footer*/
 #app-layout #app-default-footer hr{
 	border-color: #BBB;
+}
+
+/*small search info*/
+.results-info a {
+	color: #a94442;
+}
+
+.results-info a:hover,
+.results-info a:active,
+.results-info a:visited {
+	color: #c66e6c;
+}
+
+/*pagination*/
+ul.pagination li:hover a{
+	background-color: #f2f2f2;
+}
+
+ul.pagination li a,
+ul.pagination li:hover a{
+	color: #777;
+}
+
+ul.pagination li.active span{
+	background-color: #999;
+	border-color: #a6a6a6;
+}
+
+ul.pagination li.active:hover span{
+	background-color: #808080;
+	border-color:#8c8c8c;
 }

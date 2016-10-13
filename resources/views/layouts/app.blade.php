@@ -22,12 +22,14 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                 <li>
+                {!! Form::open(['action' => 'CarsController@index', 'method' => 'GET', 'role' => 'search']) !!}
                     <div class="input-group" id="app-quick-search">
-                        <input type="text" class="form-control" placeholder="Snel zoeken...">
+                        {!! Form::text('term', Request::get('term'), ['class' => 'form-control', 'placeholder' => 'Snel zoeken...']) !!}
                         <span class="input-group-btn">
                             <button class="btn btn-secondary"><i class="fa fa-search fa-fw" aria-hidden="true"></i></button>
                         </span>
                     </div>
+                {!! Form::close() !!}
                 </li>
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}" data-toggle="tooltip" data-placement="bottom" title="Inloggen"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Inloggen</a></li>
