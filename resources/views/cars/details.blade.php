@@ -2,6 +2,16 @@
 
 @section('header')
 <link rel="stylesheet" href="{{ URL::asset('css/car.css') }}">
+ <style>
+ .carousel-inner > .item > img,
+ .carousel-inner > .item > a > img {
+     max-height: 100% !important;
+
+ }
+ .carousel-inner {
+    height: 400px;
+ }
+ </style>
 @endsection
 
 @section('content')
@@ -16,10 +26,10 @@
                         </h2>
                     </div>
                     <div class="panel-body">
-                    <div id="carousel-example-generic" class="col-sm-6 carousel slide" data-ride="carousel">
+                    <div id="carousel-example-generic" class="col-sm-6 carousel" data-ride="carousel">
                           <!-- Indicators -->
                           <ol class="carousel-indicators">
-                            @for ($i = 0; $i < 10; $i++)
+                            @for ($i = 0; $i < count($car->images); $i++)
                                 @if ($i == 0)
                                     <li data-target="#carousel-example-generic" data-slide-to="{{$i}}" class="active"></li>
                                 @else
@@ -30,24 +40,21 @@
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
-                            @for ($i = 0; $i < 10; $i++)
-                                @if ($i == 0)
-                                    <div class="item active">
-                                <img src="http://placehold.it/360x270/{{dechex($i)}}00/?text=plaatje {{$i}}" alt="...">
-                                <div class="carousel-caption">
-                                    plaatje {{$i}}
-                                </div>
-                            </div>
+                            @foreach ($car->images as $key => $image)
+                                @if($key == 0)
+                                <div class="item active">
+                                <img src="{{url($image->path)}}" alt="...">
+                                
                                 @else
-                                    <div class="item">
-                                <img src="http://placehold.it/360x270/{{dechex($i)}}00/?text=plaatje {{$i}}" alt="...">
-                                <div class="carousel-caption">
-                                    plaatje {{$i}}
-                                </div>
+                                <div class="item">
+                                <img src="{{url($image->path)}}" alt="...">
+                                
+                                @endif
+                                
 
                             </div>
-                                @endif
-                            @endfor
+                                
+                            @endforeach
 
                             <!-- Controls -->
                             <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
