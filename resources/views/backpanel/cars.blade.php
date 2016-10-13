@@ -16,6 +16,8 @@
 						        <th data-toggle="tooltip" title="Klik hier om op Brand te sorteren">Brand</th>
 						        <th data-toggle="tooltip" title="Klik hier om op Model te sorteren">Model</th>
 						        <th data-toggle="tooltip" title="Klik hier om op Jaar te sorteren">Jaar</th>
+						        <th></th>
+						        <th></th>
 					      	</tr>
 					    </thead>
 					    <tbody>
