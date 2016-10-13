@@ -4,13 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class car extends Model
+class image extends Model
 {
-    //
     protected $guarded = [];
 
-    public function images()
+    public function car()
     {
-    	return $this->hasMany('App\image');
+        return $this->belongsTo('App\car');
     }
 }

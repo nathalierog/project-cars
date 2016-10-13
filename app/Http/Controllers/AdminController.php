@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\car;
+use App\image;
 
 class AdminController extends Controller
 {	
@@ -38,7 +39,16 @@ class AdminController extends Controller
                 $imgname = $prefix . $i .".". $request->file('img_uploads.'.$i)->extension();
 
                 $request->file('img_uploads.'.$i)->move(public_path('files'), $imgname);
+
+                $data['car_id'] = $for;
+                $data['path'] = 'files/' .$imgname;
+                $data['priority'] = 0;
+                image::create($data);
             }
+    }
+    public function imgOrderView($id)
+    {
+        return response()->json(image::where('car_id',$id)->get());
     }
     public function cars()
     {
