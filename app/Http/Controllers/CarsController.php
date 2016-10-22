@@ -17,7 +17,9 @@ class CarsController extends Controller
      */
     public function index(Request $request)
     {   
-        $cars = car::where(function($query) use ($request) {
+        $cars = car::with(array('images' => function($query){
+            $query->orderBy('priority');
+        }))->where(function($query) use ($request) {
             if(($term = $request->get('term'))) {
                 $query->where('brand', 'LIKE', '%'. $term . '%')
                 ->orWhere("model", "LIKE", '%'. $term . '%')
@@ -39,7 +41,9 @@ class CarsController extends Controller
 
     public function show($id)
     {
-        $car = car::with('images')->find($id);
+        $car = car::with(array('images' => function($query){
+            $query->orderBy('priority');
+        }))->find($id);
         return view('cars.details', ['car' => $car]);
     }
 
