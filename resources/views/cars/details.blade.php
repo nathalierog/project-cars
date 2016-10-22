@@ -3,14 +3,12 @@
 @section('header')
 <link rel="stylesheet" href="{{ URL::asset('css/car.css') }}">
  <style>
- .carousel-inner > .item > img,
- .carousel-inner > .item > a > img {
-     max-height: 100% !important;
-
- }
- .carousel-inner {
-    height: 400px;
- }
+.carousel .carousel-inner img {
+  width: 100%;
+  height: 25em;
+  object-fit: contain;
+  overflow: hidden;
+}
  </style>
 @endsection
 
