@@ -33,7 +33,8 @@ class CarsController extends Controller
         ->orderBy('created_at', 'desc')
         ->paginate(15);
 
-        return view('cars.overview', ['cars' => $cars]);
+
+        return view('cars.overview', ['cars' => $cars, 'input' => $request->all()]);
     }
 
     public function show($id)
