@@ -36,7 +36,7 @@
                         </div>
                         <div class="panel-body">
                             <div class="col-md-4">
-                                <img class="img-responsive center-block img-rounded margin-sm" src="{{$car->images[0]->path}}" alt="plaatje">
+                                <img class="img-responsive center-block img-rounded margin-sm" src="{{isset($car->images[0]) && File::exists($car->images[0]->path) ? $car->images[0]->path : 'http://placehold.it/600x400?text='.$car->model}}" alt="plaatje">
                             </div>
                             <div class="col-md-8">
                                 <div class="col-md-12 hidden-xs hidden-sm text-center-sm margin-sm">
