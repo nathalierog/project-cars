@@ -1,0 +1,68 @@
+@import 'https://fonts.googleapis.com/css?family=Lato';
+
+/*main*/
+html, body, .container-fluid, .row{
+	font-family: lato;
+    height: 100%;
+}
+
+#backpanel-layout .margin-top{
+	margin-top: 50px;
+}
+
+#backpanel-layout .fa-btn{
+	margin-right: 5px;
+}
+
+/*#backpanel-sticky-navbar*/
+#backpanel-layout #backpanel-sticky-navbar .navbar-brand > img{
+    height: 100%;
+}
+
+/*#backpanel-side-menu*/
+#backpanel-layout #backpanel-side-menu{
+	min-height: 100%;
+	position: fixed;
+	z-index: 1000;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#backpanel-layout #backpanel-side-menu .navbar-collapse{
+	padding-left: 0;
+	padding-right: 0;
+}
+
+#backpanel-layout #backpanel-side-menu li a{
+	color: #9d9d9d;
+}
+
+#backpanel-layout #backpanel-side-menu li a:hover, #backpanel-layout #backpanel-side-menu li a:focus{
+	background: #111;
+	color: #337ab7;
+}
+
+@media (max-width: 768px){
+	#backpanel-layout #backpanel-side-menu{
+		display: none;
+	}
+}
+
+/*#backpanel-content*/
+#backpanel-layout #backpanel-content{
+	padding-top: 15px;
+}
+
+#backpanel-layout #backpanel-content textarea{
+    resize: vertical;
+    min-height: 50px;
+    max-height: 150px;
+}
+
+#backpanel-layout #backpanel-content thead th:hover{
+	cursor: pointer;
+}
+
+#backpanel-layout #backpanel-content tbody tr:hover{
+	background: #e9e9e9;
+}
