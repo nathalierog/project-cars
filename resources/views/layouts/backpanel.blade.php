@@ -65,5 +65,6 @@
     <script src="{{ URL::asset('assets/tablesorter/js/jquery.tablesorter.widgets.min.js') }}"></script>  
     <script src="{{ URL::asset('assets/tablesorter/js/jquery.tablesorter.pager.min.js') }}"></script>
     <script src="{{ URL::asset('js/backpanel.js') }}"></script>
+    @yield('script')
 </body>
 </html>
