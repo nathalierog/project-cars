@@ -18,6 +18,7 @@
 						        <th data-toggle="tooltip" title="Klik hier om op Jaar te sorteren">Jaar</th>
 						        <th></th>
 						        <th></th>
+						        <th></th>
 					      	</tr>
 					    </thead>
 					    <tbody>
@@ -30,9 +31,11 @@
 								    <td>
 								    	<a href="{{ url('/backpanel/editcar/' . $car->id) }}">Bewerken</a>
 							  		</td>
+							  		<td><a href="{{url('/backpanel/imgorder/' . $car->id)}}">afbeeldingen beheren</a></td>
 								    <td>
 								    	<a href="{{ url('/backpanel/deletecar/' . $car->id) }}">Verwijderen</a>
 								    </td>
+
 								</tr>   
 						    @endforeach
 						</tbody>

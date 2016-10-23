@@ -32,7 +32,8 @@ function tablesorter(){
     },
     headers:{
       4: {sorter: false, filter: false},
-      5: {sorter: false, filter: false}
+      5: {sorter: false, filter: false},
+      6: {sorter: false, filter: false},
     }
   })
   .tablesorterPager({

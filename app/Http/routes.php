@@ -32,6 +32,7 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 		return view('backpanel.overview');
 	});
 	Route::get('imgorder/{id}', 'AdminController@imgOrderView');
+	Route::post('imgorder', 'AdminController@imgOrderAction');
 	Route::get('overview', function () {
 		return redirect('backpanel');
 	});

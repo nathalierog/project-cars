@@ -47,9 +47,21 @@ class AdminController extends Controller
             }
     }
     public function imgOrderView($id)
-    {
-        return response()->json(image::where('car_id',$id)->get());
+    {   
+        $images = image::where('car_id',$id)->orderBy('priority')->get();
+        return view('backpanel.imgsort', ['images' => $images]);
     }
+    public function imgOrderAction(Request $request)
+    {   
+        $priorities = $request->input('priorities');
+        foreach ($priorities as $key => $priority) {
+            $image = image::find($key);
+            $image->priority = $priority;
+            $image->save();
+        }
+        // dd($request->all());
+    }
+
     public function cars()
     {
     	$cars = car::all();
