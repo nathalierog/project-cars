@@ -60,6 +60,9 @@
                     <label for="message">Question/Comment</label>
                     <textarea class="form-control" id="message" name="message" rows="3" placeholder="Question/Comment"></textarea>
                 </div>
+                 <div class="form-group col-md-12">
+                    {!! Recaptcha::render() !!}
+                </div>
                 <div class="form-group col-md-12">
                     {{ Form::submit('Contact us', array('class' => 'btn btn-primary')) }}
                 </div>
