@@ -23,7 +23,6 @@ class AdminController extends Controller
     		'transmission' => 'Required',
     		'body' => 'Required',
     		'fuel' => 'Required',
-    		'license_plate' => 'Required',
     		'main_img' => '',
     		'description' => 'Required',
             'img_uploads' => 'Required',
