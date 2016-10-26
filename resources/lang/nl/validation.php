@@ -113,7 +113,9 @@ return [
     */
 
     'attributes'           => [
-        //
+        'password' => 'wachtwoord',
+        'email' => 'e-mailadres',
+        'name' => 'naam',
     ],
 
 ];
