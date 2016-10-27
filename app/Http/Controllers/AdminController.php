@@ -31,17 +31,23 @@ class AdminController extends Controller
 	}
     private function storeImages($for,Request $request)
     {
-            $prefix = $request->brand."_".$request->model."_".$for."_";
+            $prefix = "car_".$for."_";
+
+            $start_offset = (!empty(image::where('car_id', '=', $for)->max('img_number'))) ? image::where('car_id', '=', $for)->max('imgnumber') + 1 : 0 ;
+            dump($start_offset);
+            dump($request->file('img_uploads'));
 
             for ($i=0; $i < count($request->img_uploads); $i++) { 
-
-                $imgname = $prefix . $i .".". $request->file('img_uploads.'.$i)->extension();
-
-                $request->file('img_uploads.'.$i)->move(public_path('files'), $imgname);
-
+                $img_number = $start_offset + $i;
+                $extension =$request->file('img_uploads.'.$i)->extension();
+                $imgname = $prefix . $img_number .".". $request->file('img_uploads.'.$i)->extension();
+                dump($imgname);
+                $test = $request->file('img_uploads.'.$i)->move(public_path('files'), $imgname);
+                
                 $data['car_id'] = $for;
-                $data['path'] = 'files/' .$imgname;
-                $data['priority'] = 0;
+                $data['img_number'] = $img_number;
+
+                $data['extension'] = $extension;
                 image::create($data);
             }
     }
