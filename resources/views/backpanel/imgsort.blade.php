@@ -17,7 +17,7 @@
 @section('content')
         <ul id="sortable" class="row">
         	@foreach($images as $key => $image)
-        	<li class="ui-state-default col-md-3 thumbnail" data-id="{{$image->id}}"><img src="{{url($image->path)}}" alt=""></li>
+        	<li class="ui-state-default col-md-3 thumbnail" data-id="{{$image->id}}"><img src="{{url('files/car_'.$image->car_id.'_'.$image->img_number.'.'.$image->extension)}}" alt=""></li>
 			@endforeach
         </ul>
 		<button id="save-button" class="col-sm-12 btn btn-default">opslaan</button>
