@@ -68,6 +68,7 @@
                     </div>
                     <div class="col-sm-2 text-right col-sm-push-4">
                         <p class="h2">€{{$car->price}},-</p>
+                        <button class="btn btn-primary col-xs-12" type="button" data-toggle="modal" data-target="#myModal">Reageer</button>
                     </div>
                     <div class="col-sm-4 col-sm-pull-2">
                         <div class="row">
@@ -107,8 +108,50 @@
                             <div class="col-xs-6">{{$car->license_plate}}</div>
                         </div>
                     </div>
-                    <div class="col-xs-12"><strong>beschrijving:</strong>
-                    <p>{{$car->description}}</p></div>
+                    <div class="col-xs-12">
+                        <strong>beschrijving:</strong>
+                        <p>{{$car->description}}</p>
+                    </div>
+                    
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">Reageer op {{$car->brand}} {{$car->model}}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    {{ Form::open(array('url' => 'react_car'))}}
+                                        <div class="row">
+                                            <div class="form-group col-md-6">
+                                                <label for="name">Name</label>
+                                                <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                                            </div>
+                                                <input type="hidden" name="id" value="{{$car->id}}">
+                                            <div class="form-group col-md-6">
+                                                <label for="email">Email address</label>
+                                                <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                <label for="message">Question/Comment</label>
+                                                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Question/Comment"></textarea>
+                                            </div>
+                                            <div class="form-group col-md-12">
+                                                {!! Recaptcha::render() !!}
+                                            </div>
+                                        </div>
+                                    
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuleren</button>
+                                    {{ Form::submit('Reactie versturen', array('class' => 'btn btn-primary')) }}
+                                    {{ Form::close() }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
             </div>
         </div>

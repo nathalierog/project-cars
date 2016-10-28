@@ -20,6 +20,7 @@ Route::get('contact', function(){
 });
 
 Route::post('contact_request','ContactController@getContactForm');
+Route::post('react_car', 'ContactController@reactForm');
 
 Route::get('about', function(){
 	return view('about-us');
