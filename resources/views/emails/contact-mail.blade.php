@@ -1,8 +1,22 @@
-<html>
-	<head></head>
-	<body style="background: black; color: white">
-		<p>{{$name}} contacted you about the following on your website</p>
-		<h1>{{$title}}</h1>
-		<p>{{$content}}</p>
-	</body>
-</html>
+@extends('emails.layout.mail-main')
+
+@section('content')
+		<tr>
+			<td>mail via contact formulier van: {{$name}}</td>
+		</tr>
+		<tr>
+			<td>
+				<hr>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<h2>{{$title}}</h1>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<p>{{$content}}</p>
+			</td>
+		</tr>
+@endsection
