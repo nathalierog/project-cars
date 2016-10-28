@@ -1,11 +1,22 @@
-<html>
-	<head></head>
-	<body>
-		<p>Goedendag, {{$name}}</p>
-		<p>Dit is een bevestiging van u mail op project-cars</p>
-		<hr>
-		<h1>{{$title}}</h1>
-		<p>{{$content}}</p>
-		<hr>
-	</body>
-</html>
+@extends('emails.layout.mail-main')
+
+@section('content')
+		<tr>
+			<td>Goedendag, {{$name}}</td>
+		</tr>
+		<tr>
+			<td>Dit is een bevestiging van u mail op project-cars</td>
+		</tr>
+		<tr>
+			<td ><hr></td>
+		</tr>
+		<tr>
+			<td>
+				<h2>{{$title}}</h1>
+			</td>
+		</tr>
+		<tr>
+			<td>{{$content}}</td>
+		</tr>
+
+@endsection
