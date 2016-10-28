@@ -41,11 +41,11 @@
                             @foreach ($car->images as $key => $image)
                                 @if($key == 0)
                                 <div class="item active">
-                                <img src="{{url($image->path)}}" alt="...">
+                                <img src="{{url('files/car_'.$image->car_id.'_'.$image->img_number.'.'.$image->extension)}}" alt="...">
                                 
                                 @else
                                 <div class="item">
-                                <img src="{{url($image->path)}}" alt="...">
+                                <img src="{{url('files/car_'.$image->car_id.'_'.$image->img_number.'.'.$image->extension)}}" alt="...">
                                 
                                 @endif
                                 
