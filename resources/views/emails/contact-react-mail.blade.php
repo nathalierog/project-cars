@@ -2,7 +2,10 @@
 
 @section('content')
 		<tr>
-			<td>mail via contact formulier van: {{$name}}</td>
+			<td>Reactie van: {{$name}}</td>
+		</tr>
+		<tr>
+			<td>Betreft: {{$car->brand}} {{$car->model}}.</td>
 		</tr>
 		<tr>
 			<td>
