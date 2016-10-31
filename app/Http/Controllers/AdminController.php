@@ -64,6 +64,7 @@ class AdminController extends Controller
             $image->priority = $priority;
             $image->save();
         }
+        return 'success';
         // dd($request->all());
     }
 
