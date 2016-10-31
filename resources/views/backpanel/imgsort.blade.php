@@ -39,7 +39,10 @@
         $.ajax({
             data: data,
             type: 'POST',
-            url: '{{url('backpanel/imgorder')}}'
+            url: '{{url('backpanel/imgorder')}}',
+            success: function (result) {
+         window.location.replace('/backpanel/cars');  
+    }
         });
     });
   </script>
