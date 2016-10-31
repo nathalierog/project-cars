@@ -5,7 +5,7 @@
 			<td>Goedendag, {{$name}}</td>
 		</tr>
 		<tr>
-			<td>Dit is een bevestiging van u reactie op de {{$car->brand}} {{$car->model}}.</td>
+			<td>Dit is een bevestiging van uw reactie op de {{$car->brand}} {{$car->model}}.</td>
 		</tr>
 		<tr>
 			<td>Hieronder vind u uw bericht.</td>

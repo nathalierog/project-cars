@@ -59,21 +59,22 @@ class ContactController extends Controller
         
         $name = $request->name;
         $email = $request->email;
-        $title = $request->subject;
         $content = $request->message;
 
         $car = car::find($request->id);
 
+        $title = "Reactie op " . $car->brand ." ". $car->model;
+
         $data = array('name'=>$name, 'email'=>$email, 'content'=>$content, 'title'=>$title, 'car'=>$car);
 
-        Mail::send(['emails.contact-mail','emails.plain.contact-mail'], $data, function ($message) use ($email, $name)
+        Mail::send(['emails.contact-react-mail','emails.plain.contact-react-mail'], $data, function ($message) use ($email, $name)
         {
             $message->to('contact@example.com')->replyTo($email, $name);
             $message->subject('Mail via website by ' . $name);
 
         });
 
-        Mail::send(['emails.confirm-react-mail','emails.plain.confirm-mail'], $data, function ($message) use ($email, $name)
+        Mail::send(['emails.confirm-react-mail','emails.plain.confirm-react-mail'], $data, function ($message) use ($email, $name)
         {
             $message->to($email)->replyTo('contact@example.com', 'project-cars');
             $message->subject('Bevestiging van uw bericht op project-cars');
