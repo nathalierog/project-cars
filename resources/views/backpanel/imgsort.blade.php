@@ -28,23 +28,29 @@
             }
         });
     });
-</script>
 
     $(".delete-button").click(function () {
         var data = {};
         data['_token'] = "{{csrf_token()}}";
         data['id'] = $(this).attr('data-id');
 
-        console.log(data)
+        console.log(data);
 
-        $.ajax({
+        if (confirm('weet je zeker dat je deze afbeelding wil verwijderen?')) {
+            $.ajax({
             data: data,
             type: 'POST',
             url: '{{url('backpanel/imgdelete')}}',
             success: function (result) {
-         location.reload();  
+              alert(result.message);
+              location.reload();
+         console.log(result);  
     }
         });
+        }
+
+
+        
     });
   </script>
 
