@@ -57,7 +57,21 @@ class AdminController extends Controller
         $this->validate($request, [
             'id' => 'Required'
             ]);
-        return 'success';
+        $id = $request->id;
+        $data = array(
+        'status' => 'success',
+        'message' => 'foto ' .$id. ' verwijdert');
+        $imgObj = image::find($id);
+        $imgName = 'car_'.$imgObj->car_id.'_'.$imgObj->img_number.'.'.$imgObj->extension;
+        $imgPath = public_path().'/files/'.$imgName;
+
+        if (file_exists($imgPath)) {
+            unlink($imgPath);
+        }
+        
+
+        $imgObj->delete();
+        return response()->json($data);
     }
     public function imgOrderView($id)
     {   
