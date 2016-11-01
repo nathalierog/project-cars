@@ -117,12 +117,6 @@
 					    </div>
 					    <hr>
 					    <div class="form-group row">
-					      	<label for="main_img" class="col-sm-12 col-form-label">Main image</label>
-					      	<div class="col-sm-12">
-					        	<input type="text" class="form-control" name="main_img" id="main_img" placeholder="Main image" value="{{ $car->main_img }}">
-					      	</div>
-					    </div>
-					    <div class="form-group row">
 					      	<label for="description" class="col-sm-12 col-form-label">Beschrijving</label>
 					      	<div class="col-sm-12">
 					        	<textarea class="form-control" name="description" id="description" placeholder="Beschrijving">{{ $car->description }}</textarea>

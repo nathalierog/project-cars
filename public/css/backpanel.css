@@ -66,3 +66,16 @@ html, body, .container-fluid, .row{
 #backpanel-layout #backpanel-content tbody tr:hover{
 	background: #e9e9e9;
 }
+
+#backpanel-layout #backpanel-content #sortable{ 
+	list-style-type: none; 
+	margin: 0; 
+	padding: 0; 
+	max-width: 100%;
+}
+
+#backpanel-layout #backpanel-content #sortable li img{
+	height: 15em;
+	object-fit: contain;
+	overflow: hidden;
+}

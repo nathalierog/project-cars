@@ -43,6 +43,12 @@ function tablesorter(){
   });
 }
 
+function tablesorterimages(){
+  $("#sortable").sortable();
+  $("#sortable").disableSelection();
+}
+
 $(document).ready(function(){ 
     tablesorter();
+    tablesorterimages();
 }); 
