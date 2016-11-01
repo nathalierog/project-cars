@@ -1,12 +1,14 @@
 @extends('layouts.backpanel')
 
 @section('content')
-    <ul id="sortable" class="row">
-    @foreach($images as $key => $image)
-        <li class="ui-state-default col-md-3 thumbnail" data-id="{{$image->id}}"><img src="{{url('files/car_'.$image->car_id.'_'.$image->img_number.'.'.$image->extension)}}" alt=""></li>
-	  @endforeach
-    </ul>
-    <button id="save-button" class="col-sm-12 btn btn-default">opslaan</button>
+        <ul id="sortable" class="row">
+        	@foreach($images as $key => $image)
+        	<li class="ui-state-default col-md-3 thumbnail" data-id="{{$image->id}}"><img src="{{url('files/car_'.$image->car_id.'_'.$image->img_number.'.'.$image->extension)}}" alt=""><div class="caption">
+            <button data-id="{{$image->id}}" class="delete-button btn btn-default col-sm-12">Verwijder</a>
+          </div></li>
+			@endforeach
+        </ul>
+		<button id="save-button" class="col-sm-12 btn btn-default">Opslaan</button>
 @endsection
 
 @section('script')
@@ -27,4 +29,23 @@
         });
     });
 </script>
+
+    $(".delete-button").click(function () {
+        var data = {};
+        data['_token'] = "{{csrf_token()}}";
+        data['id'] = $(this).attr('data-id');
+
+        console.log(data)
+
+        $.ajax({
+            data: data,
+            type: 'POST',
+            url: '{{url('backpanel/imgdelete')}}',
+            success: function (result) {
+         location.reload();  
+    }
+        });
+    });
+  </script>
+
 @endsection
