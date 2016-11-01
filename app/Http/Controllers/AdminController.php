@@ -51,6 +51,14 @@ class AdminController extends Controller
                 image::create($data);
             }
     }
+
+    public function deleteImages(Request $request)
+    {
+        $this->validate($request, [
+            'id' => 'Required'
+            ]);
+        return 'success';
+    }
     public function imgOrderView($id)
     {   
         $images = image::where('car_id',$id)->orderBy('priority')->get();
