@@ -17,7 +17,7 @@ body{
 }
 
 #app-layout .navbar-static-top a{
-	color:  white;
+	color: white;
 }
 
 #app-layout .navbar-static-top a:hover{
@@ -197,4 +197,14 @@ ul.pagination li.active span{
 ul.pagination li.active:hover span{
 	background-color: #808080;
 	border-color:#8c8c8c;
+}
+
+/*advanced-search*/
+#app-layout #advanced-search{
+	background: #e7e7e7;
+	color: black;
+}
+
+#app-layout #advanced-search hr{
+	border-color: black;
 }

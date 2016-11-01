@@ -31,7 +31,7 @@
 								    <td>
 								    	<a href="{{ url('/backpanel/editcar/' . $car->id) }}">Bewerken</a>
 							  		</td>
-							  		<td><a href="{{url('/backpanel/imgorder/' . $car->id)}}">afbeeldingen beheren</a></td>
+							  		<td><a href="{{url('/backpanel/imgorder/' . $car->id)}}">Afbeeldingen beheren</a></td>
 								    <td>
 								    	<a href="{{ url('/backpanel/deletecar/' . $car->id) }}">Verwijderen</a>
 								    </td>

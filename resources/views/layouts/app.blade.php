@@ -7,7 +7,7 @@
     <title>Project CARS</title>
     <link rel="stylesheet" href="{{ URL::asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('css/layout.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
     @yield('header') 
 </head>
 <body id="app-layout">
