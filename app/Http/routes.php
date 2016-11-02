@@ -26,6 +26,10 @@ Route::get('about', function(){
 	return view('about-us');
 });
 
+Route::get('search', function(){
+	return view('search');
+});
+
 Route::auth();
 
 Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
