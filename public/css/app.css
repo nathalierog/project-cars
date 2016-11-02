@@ -200,11 +200,3 @@ ul.pagination li.active:hover span{
 }
 
 /*advanced-search*/
-#app-layout #advanced-search{
-	background: #e7e7e7;
-	color: black;
-}
-
-#app-layout #advanced-search hr{
-	border-color: black;
-}
