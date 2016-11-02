@@ -39,6 +39,8 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 	Route::get('imgorder/{id}', 'AdminController@imgOrderView');
 	Route::post('imgorder', 'AdminController@imgOrderAction');
 	Route::post('imgdelete', 'AdminController@deleteImages');
+	Route::post('addImage/{id}','AdminController@addImage');
+
 	Route::get('overview', function () {
 		return redirect('backpanel');
 	});
