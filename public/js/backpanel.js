@@ -45,4 +45,6 @@ function tablesorter(){
 
 $(document).ready(function(){ 
     tablesorter();
+    
+    $('[data-toggle="tooltip"]').tooltip(); 
 }); 

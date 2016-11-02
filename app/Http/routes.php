@@ -42,7 +42,7 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 	});
 	Route::get('editcar/{id}', 'AdminController@editcarform');
 	Route::post('editcar/{id}', 'AdminController@editCar');
-	Route::get('deletecar/{id}', 'AdminController@deleteCar');
+	Route::post('deletecar/{id}', 'AdminController@deleteCar');
 	Route::post('addcar','AdminController@setCar');
 });
 

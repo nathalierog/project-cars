@@ -63,7 +63,7 @@ class AdminController extends Controller
 
     public function cars()
     {
-    	$cars = car::all();
+    	$cars = car::all()->where("sold", "LIKE", 0);
         return view('backpanel.cars', ['cars' => $cars]);
     }
 
@@ -89,9 +89,28 @@ class AdminController extends Controller
     	return redirect('backpanel/cars');
     }
 
-    public function deleteCar($id)
+    public function deleteCar($id, Request $request)
     {
-    	car::destroy($id);
+        if($request['hard-delete'] === 'yes') {
+            car::destroy($id);
+        } else {
+            //Validation rules
+            $this->validate($request, [
+                'spend-on' => 'required',
+                'sold-for' => 'required',
+            ]);
+
+            $spend = $request['spend-on'];
+            $sold = $request['sold-for'];
+
+        	$car = car::find($id);
+            $car->spend_on = $spend;
+            $car->sold_for = $sold;
+            $car->sold = 1;
+
+            $car->save();
+        }
+
     	return redirect('backpanel/cars');
     }
 }
