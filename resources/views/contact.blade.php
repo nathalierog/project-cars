@@ -64,7 +64,7 @@
                     {!! Recaptcha::render() !!}
                 </div>
                 <div class="form-group col-md-12">
-                    {{ Form::submit('Contact us', array('class' => 'btn btn-primary')) }}
+                    {{ Form::submit('Verzenden', array('class' => 'btn btn-primary')) }}
                 </div>
             </div>
 

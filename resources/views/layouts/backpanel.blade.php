@@ -50,6 +50,7 @@
                     <ul class="nav">
                         <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn" aria-hidden="true"></i>Dashboard</a></li>
                         <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn" aria-hidden="true"></i>Cars</a></li>
+                        <li><a href="{{ url('/backpanel/omzet') }}"><i class="fa fa-money fa-btn" aria-hidden="true"></i>Omzet</a></li>
                     </ul>
                 </div>
             </aside>  

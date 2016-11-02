@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Lato';
 
 /*main*/
-html, body, .container-fluid, .row{
+html, body, .container-fluid{
 	font-family: lato;
     height: 100%;
 }

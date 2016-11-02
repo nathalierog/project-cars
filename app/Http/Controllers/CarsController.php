@@ -32,6 +32,7 @@ class CarsController extends Controller
                 }
             }
         })
+        ->where("sold", "LIKE", 0)
         ->orderBy('created_at', 'desc')
         ->paginate(15);
 

@@ -51,4 +51,6 @@ function tablesorterimages(){
 $(document).ready(function(){ 
     tablesorter();
     tablesorterimages();
+    
+    $('[data-toggle="tooltip"]').tooltip(); 
 }); 
