@@ -29,3 +29,7 @@
     object-fit: contain;
     overflow: hidden;
 }
+
+ul{
+    list-style-type: none;
+}

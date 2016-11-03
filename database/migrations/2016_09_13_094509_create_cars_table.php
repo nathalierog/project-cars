@@ -25,7 +25,7 @@ class CreateCarsTable extends Migration
             $table->string('body', 255);
             $table->string('fuel', 255);
             $table->string('license_plate', 255);
-            $table->string('main_img', 255);
+            $table->text('accessories')->nullable();
             $table->text('description');
             $table->boolean('sold')->default('0');
             $table->integer('spend_on')->comment("the amount of money that is spend on this car")->nullable();
