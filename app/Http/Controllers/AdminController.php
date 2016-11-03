@@ -32,7 +32,7 @@ class AdminController extends Controller
     {
             $prefix = "car_".$for."_";
 
-            $start_offset = (!empty(image::where('car_id', '=', $for)->max('img_number'))) ? image::where('car_id', '=', $for)->max('imgnumber') + 1 : 0 ;
+            $start_offset = (!empty(image::where('car_id', '=', $for)->max('img_number'))) ? image::where('car_id', '=', $for)->max('img_number') + 1 : 0 ;
             dump($start_offset);
             dump($request->file('img_uploads'));
 
@@ -50,7 +50,15 @@ class AdminController extends Controller
                 image::create($data);
             }
     }
-
+    public function addImage($id,Request $request)
+    {
+        $this->validate($request, [
+            'img_uploads' => 'Required',
+            'img_uploads.*' => 'image|max:3000'
+            ]);
+        $this->storeImages($id, $request);
+        return back();
+    }
     public function deleteImages(Request $request)
     {
         $this->validate($request, [
@@ -75,7 +83,7 @@ class AdminController extends Controller
     public function imgOrderView($id)
     {   
         $images = image::where('car_id',$id)->orderBy('priority')->get();
-        return view('backpanel.imgsort', ['images' => $images]);
+        return view('backpanel.imgsort', ['images' => $images,'id'=>$id]);
     }
     public function imgOrderAction(Request $request)
     {   
