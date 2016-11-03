@@ -25,7 +25,6 @@ class AdminController extends Controller
     		'fuel' => 'Required',
     		'main_img' => '',
     		'description' => 'Required',
-            'img_uploads' => 'Required',
             'img_uploads.*' => 'image|max:3000'
     		]);
 	}

@@ -33,6 +33,10 @@
 				      		<label for="keyword" class="col-sm-12 col-form-label">Keyword(s)</label>
 					      	<div class="col-sm-12">
 					        	<input type="text" class="form-control" name="keyword" id="keyword" placeholder="Keyword(s)" value="{{ $car->keyword }}">
+					      		<br>
+					      		<div class="alert alert-info">
+								  	<strong>Let op!</strong> Als de auto meerdere keywords heeft scheid ze dan met een ' , '
+								</div>
 					      	</div>
 					    </div>
 					    <hr>
@@ -120,6 +124,16 @@
 					      	<label for="description" class="col-sm-12 col-form-label">Beschrijving</label>
 					      	<div class="col-sm-12">
 					        	<textarea class="form-control" name="description" id="description" placeholder="Beschrijving">{{ $car->description }}</textarea>
+					      	</div>
+			    		</div>
+			    		<div class="form-group row">
+					      	<label for="accessories" class="col-sm-12 col-form-label">Accessoires</label>
+					      	<div class="col-sm-12">
+					        	<textarea class="form-control" name="accessories" id="accessories" placeholder="Accessoires">{{ $car->accessories }}</textarea>
+					      		<br>
+					      		<div class="alert alert-info">
+								  	<strong>Let op!</strong> Als de auto meerdere accessoires heeft scheid ze dan met een ' , '
+								</div>
 					      	</div>
 			    		</div>
 			    	</div>

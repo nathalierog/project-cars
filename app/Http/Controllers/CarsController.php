@@ -45,7 +45,20 @@ class CarsController extends Controller
         $car = car::with(array('images' => function($query){
             $query->orderBy('priority');
         }))->find($id);
-        return view('cars.details', ['car' => $car]);
+
+        function multiexplode ($delimiters,$string) {
+            $ready = str_replace($delimiters, $delimiters[0], $string);
+            $launch = explode($delimiters[0], $ready);
+            return  $launch;
+        }
+
+        $accessories = $car->accessories;
+        $accessories = multiexplode(array(",",", "," ,"," , "),$accessories);
+
+        $keywords = $car->keyword;
+        $keywords = multiexplode(array(",",", "," ,"," , "),$keywords);
+
+        return view('cars.details', ['car' => $car, 'accessories' => $accessories, 'keywords' => $keywords]);
     }
 
 }

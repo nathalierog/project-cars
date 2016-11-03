@@ -67,52 +67,86 @@
                         
                     </div>
                     <div class="col-sm-2 text-right col-sm-push-4">
-                        <p class="h2">€{{$car->price}},-</p>
                         <button class="btn btn-primary col-xs-12" type="button" data-toggle="modal" data-target="#myModal">Reageer</button>
                     </div>
                     <div class="col-sm-4 col-sm-pull-2">
                         <div class="row">
-                            <div class="col-xs-6"><strong>merk:</strong></div>
+                            <div class="col-xs-6"><strong>Merk:</strong></div>
                             <div class="col-xs-6">{{$car->brand}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><strong>type:</strong></div>
+                            <div class="col-xs-6"><strong>Model:</strong></div>
                             <div class="col-xs-6">{{$car->model}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><strong>kilometerstand:</strong></div>
+                            <div class="col-xs-6"><strong>Prijs:</strong></div>
+                            <div class="col-xs-6">{{$car->price}},-</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6"><strong>Kilometerstand:</strong></div>
                             <div class="col-xs-6">{{$car->mileage}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><strong>bouwjaar:</strong></div>
+                            <div class="col-xs-6"><strong>Bouwjaar:</strong></div>
                             <div class="col-xs-6">{{$car->year}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><strong>kleur:</strong></div>
+                            <div class="col-xs-6"><strong>Kleur:</strong></div>
                             <div class="col-xs-6">{{$car->color}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><strong>koppeling:</strong></div>
+                            <div class="col-xs-6"><strong>Transmissie:</strong></div>
                             <div class="col-xs-6">{{$car->transmission}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><strong>body:</strong></div>
+                            <div class="col-xs-6"><strong>Carrosserie:</strong></div>
                             <div class="col-xs-6">{{$car->body}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><strong>brandstof:</strong></div>
+                            <div class="col-xs-6"><strong>Brandstof:</strong></div>
                             <div class="col-xs-6">{{$car->fuel}}</div>
                         </div>
                         <div class="row">
-                            <div class="col-xs-6"><strong>kenteken:</strong></div>
+                            <div class="col-xs-6"><strong>Nummerplaat:</strong></div>
                             <div class="col-xs-6">{{$car->license_plate}}</div>
                         </div>
                     </div>
-                    <div class="col-xs-12">
-                        <strong>beschrijving:</strong>
+                    <div class="col-md-6">
+                        <br>
+                        <strong>Beschrijving:</strong>
                         <p>{{$car->description}}</p>
                     </div>
-                    
+                    <div class="col-md-12">
+                        <?php 
+                            $accessories = array_filter($accessories);
+                            $keywords = array_filter($keywords);
+
+                            if(!empty($accessories)): 
+                        ?>
+                            <div class="col-md-3">
+                                <br>
+                                <strong>Accessoires:</strong>
+                                <ul>
+                                    <?php foreach ($accessories as $accessory): ?>
+                                        <li>{{ $accessory }}</li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php 
+                            endif;
+                            if(!empty($keywords)): 
+                        ?>
+                            <div class="col-md-3">
+                                <br>
+                                <strong>Keywords:</strong>
+                                <ul>
+                                    <?php foreach ($keywords as $keyword): ?>
+                                        <li>{{ $keyword }}</li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+                    </div>   
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
