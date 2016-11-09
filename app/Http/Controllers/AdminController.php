@@ -33,21 +33,19 @@ class AdminController extends Controller
             $prefix = "car_".$for."_";
 
             $start_offset = (!empty(image::where('car_id', '=', $for)->max('img_number'))) ? image::where('car_id', '=', $for)->max('img_number') + 1 : 0 ;
-            dump($start_offset);
-            dump($request->file('img_uploads'));
+            if (!empty($request->img_uploads[0])) {
+                for ($i=0; $i < count($request->img_uploads); $i++) { 
+                    $img_number = $start_offset + $i;
+                    $extension =$request->file('img_uploads.'.$i)->extension();
+                    $imgname = $prefix . $img_number .".". $request->file('img_uploads.'.$i)->extension();
+                    $test = $request->file('img_uploads.'.$i)->move(public_path('files'), $imgname);
+                    
+                    $data['car_id'] = $for;
+                    $data['img_number'] = $img_number;
 
-            for ($i=0; $i < count($request->img_uploads); $i++) { 
-                $img_number = $start_offset + $i;
-                $extension =$request->file('img_uploads.'.$i)->extension();
-                $imgname = $prefix . $img_number .".". $request->file('img_uploads.'.$i)->extension();
-                dump($imgname);
-                $test = $request->file('img_uploads.'.$i)->move(public_path('files'), $imgname);
-                
-                $data['car_id'] = $for;
-                $data['img_number'] = $img_number;
-
-                $data['extension'] = $extension;
-                image::create($data);
+                    $data['extension'] = $extension;
+                    image::create($data);
+                }
             }
     }
     public function addImage($id,Request $request)
