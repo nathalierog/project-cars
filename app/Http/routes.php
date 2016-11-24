@@ -40,10 +40,10 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 	Route::post('imgorder', 'AdminController@imgOrderAction');
 	Route::post('imgdelete', 'AdminController@deleteImages');
 	Route::post('addImage/{id}','AdminController@addImage');
-
 	Route::get('overview', function () {
 		return redirect('backpanel');
 	});
+	Route::get('sales', 'AdminController@getSales');
 	Route::get('cars', 'AdminController@cars');
 	Route::get('addcar', function () {
 		return view('backpanel.addcar');

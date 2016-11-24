@@ -147,4 +147,10 @@ class AdminController extends Controller
 
     	return redirect('backpanel/cars');
     }
+
+    public function getSales()
+    {
+        $sales = car::where("sold", "=", 1)->get();
+        return view('backpanel.sales', ['sales' => $sales]);
+    }
 }
