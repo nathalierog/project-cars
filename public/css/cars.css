@@ -1,26 +1,10 @@
-@media (max-width: 767px){
-    .text-center-xs{
-        text-align: center;
-    }
-}
-
-@media (max-width: 991px){
-    .text-center-sm{
-        text-align: center;
-    }
-
-    .margin-sm{
-    	margin-bottom: 3px;
-    }
-}
-
 .panel-body{
-	color: black;
+    color: black;
 }
 
 .panel-heading{
-	background-color: #666 !important;
-	color: white !important;
+    background-color: #666 !important;
+    color: white !important;
 }
 
 .carousel .carousel-inner img{
@@ -28,6 +12,15 @@
     height: 25em;
     object-fit: contain;
     overflow: hidden;
+}
+    
+@media screen and (min-width 768px) and (max-width 992px){    
+    .eq-height{
+        display: flex;
+    }
+    .eq-height .col-md-12{
+        flex: 1;
+    }
 }
 
 ul{
