@@ -52,6 +52,14 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 	Route::post('editcar/{id}', 'AdminController@editCar');
 	Route::post('deletecar/{id}', 'AdminController@deleteCar');
 	Route::post('addcar','AdminController@setCar');
+
+	Route::get('slideshow', function () {
+		return view('backpanel.slideshow');
+	});
+	Route::get('addsliderule', function () {
+		return view('backpanel.addsliderule');
+	});
+	Route::post('addsliderule','AdminController@addsliderule');
 });
 
 Route::group(['prefix' => 'cars'], function ()
