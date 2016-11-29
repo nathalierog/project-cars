@@ -52,6 +52,7 @@
                         <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn" aria-hidden="true"></i>Dashboard</a></li>
                         <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn" aria-hidden="true"></i>Auto's</a></li>
                         <li><a href="{{ url('/backpanel/sales') }}"><i class="fa fa-money fa-btn" aria-hidden="true"></i>Omzet</a></li>
+                        <li><a href="{{ url('/backpanel/slideshow') }}"><i class="fa fa-picture-o fa-btn" aria-hidden="true"></i>Slideshow</a></li>
                     </ul>
                 </div>
             </aside>  
