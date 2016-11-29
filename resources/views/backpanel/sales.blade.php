@@ -25,9 +25,16 @@
 						    <td>{{$sale->model}}</td>
 						    <td>{{$sale->spend_on}}</td>
 						    <td>{{$sale->sold_for}}</td>
-						    <td>{{$sale->sold_for - $sale->spend_on}}</td>
+						    <td>{{$sale->car_sales}}</td>
 						</tr>
 					@endforeach
+						<tr>
+						    <td><b>Totaal</b></td>
+						    <td></td>
+						    <td></td>
+						    <td></td>
+						    <td>{{$total or '0'}}</td>
+						</tr>
 					</tbody>
 					<tfoot>
 						<tr>

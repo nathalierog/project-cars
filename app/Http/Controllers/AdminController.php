@@ -7,9 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\car;
 use App\image;
+use DB;
 
 class AdminController extends Controller
 {	
+    public function addsliderule(){
+
+    }
 	private function validator($request)
 	{
 		$this->validate($request, [
@@ -150,7 +154,15 @@ class AdminController extends Controller
 
     public function getSales()
     {
-        $sales = car::where("sold", "=", 1)->get();
-        return view('backpanel.sales', ['sales' => $sales]);
+        $sales = car::select('*', DB::raw('sold_for - spend_on as car_sales'))->where("sold", "=", 1)->get();
+        // dd($sales);
+        $total = 0;
+
+        foreach ($sales as $key => $sale) {
+            $total += $sale->car_sales;
+        }
+
+        // dd($total);
+        return view('backpanel.sales', ['sales' => $sales, 'total' => $total]);
     }
 }
