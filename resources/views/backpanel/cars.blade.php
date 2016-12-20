@@ -12,7 +12,6 @@
 				    <table class="table table-striped table-bordered tablesorter">
 					    <thead>
 					      	<tr>
-						        <th>ID</th>
 						        <th>Merk</th>
 						        <th>Model</th>
 						        <th>Jaar</th>
@@ -24,9 +23,8 @@
 					    <tbody>
 						    @foreach ($cars as $car)
 					        	<tr>
-									<td>{{$car->id}}</td>
-								    <td>{{$car->brand}}</td>
-								    <td>{{$car->model}}</td>
+								    <td>{{$car->brand->brand}}</td>
+								    <td>{{$car->model->model}}</td>
 								    <td>{{$car->year}}</td>
 								    <td>
 								    	<a href="{{ url('/backpanel/editcar/' . $car->id) }}">Bewerken</a>
@@ -75,7 +73,6 @@
         </div>
     </div>
 	@endif
-@endsection
 
 <script src="{{ URL::asset('js/backpanel.js') }}"></script>
 
@@ -123,3 +120,4 @@
 		</div>
 	</div>
 @endforeach
+@endsection

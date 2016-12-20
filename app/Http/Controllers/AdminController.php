@@ -6,15 +6,18 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\car;
+use App\CarBrands;
+use App\CarModels;
 use App\image;
+use Log;
 
 class AdminController extends Controller
 {	
 	private function validator($request)
 	{
 		$this->validate($request, [
-    		'brand' => 'Required',
-    		'model' => 'Required',
+    		'brand_id' => 'Required',
+    		'model_id' => 'Required',
     		'keyword' => '',
     		'price' => 'Required',
     		'mileage' => 'Required',
@@ -94,10 +97,16 @@ class AdminController extends Controller
             $image->save();
         }
         return 'success';
-        // dd($request->all());
     }
 
-    public function cars()
+    public function addCar()
+    {
+        $carBrands = CarBrands::get()->all(); 
+
+        return view('backpanel.addcar', ['carBrands' => $carBrands]);
+    }
+
+    public function carsOverview()
     {
     	$cars = car::all()->where("sold", "LIKE", 0);
         return view('backpanel.cars', ['cars' => $cars]);
@@ -115,7 +124,9 @@ class AdminController extends Controller
     public function editCarForm($id)
     {	
     	$car = car::find($id);
-    	return view('backpanel/editcar' ,['car' => $car, 'id' => $id]);
+        $carBrands = carBrands::get()->all();
+
+    	return view('backpanel/editcar' ,['car' => $car, 'id' => $id, 'carBrands' => $carBrands]);
     }
     public function editCar($id, Request $request)
     {
@@ -149,4 +160,119 @@ class AdminController extends Controller
 
     	return redirect('backpanel/cars');
     }
+
+    public function manageBrandsModels()
+    {
+        //Get all the brands
+        $carBrands = CarBrands::get()->all();
+
+        return view('backpanel.manage-brands', ['carBrands' => $carBrands]);
+    }
+
+    public function getModels()
+    {
+        $brandID = $_GET['brandID'];
+        $carModels = CarModels::where('brand_id', $brandID)->get();
+
+        return response()->json($carModels);
+    }
+
+    public function setBrand(Request $request)
+    {
+        $this->validate($request, [
+            'brand' => 'Required|unique:car_brands'
+        ]);
+
+        $brand = new CarBrands;
+        $brand->brand = ucfirst($request->brand);
+        $brand->save();
+
+        return redirect('backpanel/manage-brands');
+    }
+
+    public function editBrand(Request $request)
+    {
+        $brand = $request['brand'];
+        $id = $request['id'];
+
+        $carBrands = CarBrands::get()->all();
+        $doubleInput = "no";
+
+
+        foreach($carBrands as $carBrand){
+            if($carBrand->brand == $brand){
+                $doubleInput = "yes"; 
+            } 
+        }
+
+        if($doubleInput === "yes") {
+            return "error";
+        }
+        else {
+            $carBrand = CarBrands::find($id);
+            $carBrand->brand = $brand;
+            $carBrand->save();
+
+            return redirect('backpanel/manage-brands');
+        }
+    }
+
+    public function deleteBrand($id)
+    {
+        $brand = CarBrands::find($id);
+        $brand->delete();
+
+        return redirect('backpanel/manage-brands');
+    }
+
+    public function setModel(Request $request)
+    {
+        $this->validate($request, [
+            'model' => 'Required|unique:car_models',
+            'brand_id' => 'Required'
+        ]);
+
+        $model = new CarModels;
+        $model->model = ucfirst($request->model);
+        $model->brand_id = $request->brand_id;
+        $model->save();
+
+        return redirect('backpanel/manage-brands');
+    }
+
+    public function editModel(Request $request)
+    {
+        $model = $request['model'];
+        $id = $request['id'];
+
+        $carModels = CarModels::get()->all();
+        $doubleInput = "no";
+
+
+        foreach($carModels as $carModel){
+            if($carModel->model == $model){
+                $doubleInput = "yes"; 
+            } 
+        }
+
+        if($doubleInput === "yes") {
+            return "error";
+        }
+        else {
+            $carModel = CarModels::find($id);
+            $carModel->model = $model;
+            $carModel->save();
+
+            return redirect('backpanel/manage-brands');
+        }
+    }
+
+    public function deleteModel($id)
+    {
+        $model = CarModels::find($id);
+        $model->delete();
+
+        return redirect('backpanel/manage-brands');
+    }   
+
 }

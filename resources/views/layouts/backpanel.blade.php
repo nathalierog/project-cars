@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Project CARS</title>
     <link rel="stylesheet" href="{{ URL::asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -37,6 +38,7 @@
                             <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
                             <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn" aria-hidden="true"></i>Dashboard</a></li>
                             <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn" aria-hidden="true"></i>Cars</a></li>
+                            <li><a href="{{ url('/backpanel/manage-brands') }}"><i class="fa fa-circle-o fa-btn" aria-hidden="true"></i>Merken beheren</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -51,6 +53,7 @@
                         <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn" aria-hidden="true"></i>Dashboard</a></li>
                         <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn" aria-hidden="true"></i>Cars</a></li>
                         <li><a href="{{ url('/backpanel/omzet') }}"><i class="fa fa-money fa-btn" aria-hidden="true"></i>Omzet</a></li>
+                        <li><a href="{{ url('/backpanel/manage-brands') }}"><i class="fa fa-circle-o fa-btn" aria-hidden="true"></i>Merken beheren</a></li>
                     </ul>
                 </div>
             </aside>  

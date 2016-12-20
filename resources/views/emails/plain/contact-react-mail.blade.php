@@ -1,5 +1,5 @@
 Reactie van: {{$name}}
-Betreft: {{$car->brand}} {{$car->model}}.
+Betreft: {{$car->brand->brand}} {{$car->model->model}}.
 
 
 {{$title}}

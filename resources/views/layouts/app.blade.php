@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Project CARS</title>
     <link rel="stylesheet" href="{{ URL::asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -109,5 +110,6 @@
     <script src="{{ URL::asset('assets/jquery/jquery.min.js') }}"></script>
     <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ URL::asset('js/layout.js') }}"></script>
+    <script src="{{ URL::asset('js/search.js') }}"></script>
 </body>
 </html>

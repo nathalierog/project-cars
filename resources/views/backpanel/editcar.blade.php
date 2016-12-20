@@ -16,7 +16,11 @@
 					    		<div class="row">
 							      	<label for="brand" class="col-sm-12 col-form-label">Merk</label>
 							      	<div class="col-sm-12">
-							        	<input type="text" class="form-control" name="brand" id="brand" placeholder="Merk" value="{{ $car->brand }}">
+						        		<select class="form-control" name="brand_id" id="brand">
+						        		@foreach ($carBrands as $carBrand)
+									  		<option value="{{$carBrand->id}}" {{($carBrand->brand == $car->brand->brand) ? "selected" : ""}}>{{$carBrand->brand}}</option>
+										@endforeach
+										</select> 
 							      	</div>
 							    </div>
 						    </div>
@@ -24,7 +28,9 @@
 						    	<div class="row">
 							      	<label for="model" class="col-sm-12 col-form-label">Model</label>
 							      	<div class="col-sm-12">
-							        	<input type="text" class="form-control" name="model" id="model" placeholder="Model" value="{{ $car->model }}">
+							      		<select class="form-control" name="model_id" id="model">      		
+										</select> 
+										<input type="hidden" id="carModel" value="{{$car->model->model}}"> 
 							      	</div>
 							    </div>
 							</div>
@@ -35,7 +41,7 @@
 					        	<input type="text" class="form-control" name="keyword" id="keyword" placeholder="Keyword(s)" value="{{ $car->keyword }}">
 					      		<br>
 					      		<div class="alert alert-info">
-								  	<strong>Let op!</strong> Als de auto meerdere keywords heeft scheid ze dan met een ' , '
+								  	<strong>Let op!</strong> Als de auto meerdere keywords heeft scheid ze dan met een comma.
 								</div>
 					      	</div>
 					    </div>
@@ -132,7 +138,7 @@
 					        	<textarea class="form-control" name="accessories" id="accessories" placeholder="Accessoires">{{ $car->accessories }}</textarea>
 					      		<br>
 					      		<div class="alert alert-info">
-								  	<strong>Let op!</strong> Als de auto meerdere accessoires heeft scheid ze dan met een ' , '
+								  	<strong>Let op!</strong> Als de auto meerdere accessoires heeft scheid ze dan met een comma.
 								</div>
 					      	</div>
 			    		</div>

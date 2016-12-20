@@ -13,4 +13,14 @@ class car extends Model
     {
     	return $this->hasMany('App\image');
     }
+
+    public function brand()
+    {
+    	return $this->belongsTo('App\CarBrands', 'brand_id');
+    }
+
+    public function model()
+    {
+        return $this->belongsTo('App\CarModels', 'model_id');
+    }
 }

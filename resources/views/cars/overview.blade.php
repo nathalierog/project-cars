@@ -31,7 +31,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h2 class="h4 text-center-xs text-center-sm">
-                                <b>{{ $car->brand }} {{$car->model}}</b>
+                                <b>{{ $car->brand->brand }} {{$car->model->model}}</b>
                             </h2>
                         </div>
                         
