@@ -79,3 +79,16 @@ html, body, .container-fluid{
 	object-fit: contain;
 	overflow: hidden;
 }
+
+#car-brands tbody tr.selected td {
+	background: transparent;
+} 
+
+#car-brands tbody tr.selected > td{
+    background-color: rgba(41, 103, 182, 0.89) !important;
+    color: #FFF;
+}
+
+#car-brands tbody tr.selected > td > a{
+	color: #FFF;
+}

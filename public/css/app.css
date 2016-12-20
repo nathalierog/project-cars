@@ -200,3 +200,12 @@ ul.pagination li.active:hover span{
 }
 
 /*advanced-search*/
+#advanced-search .panel-heading{
+	background-color: #666;
+}
+
+#advanced-search .panel-heading > h3 {
+	color: white;
+	font-weight: 900;
+	text-align: center;
+}

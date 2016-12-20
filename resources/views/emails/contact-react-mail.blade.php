@@ -5,7 +5,7 @@
 			<td>Reactie van: {{$name}}</td>
 		</tr>
 		<tr>
-			<td>Betreft: {{$car->brand}} {{$car->model}}.</td>
+			<td>Betreft: {{$car->brand->brand}} {{$car->model->model}}.</td>
 		</tr>
 		<tr>
 			<td>

@@ -20,7 +20,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h2 class="h4 text-center-xs text-center-sm">
-                            <b>{{$car->brand}} {{$car->model}}</b>
+                            <b>{{$car->brand->brand}} {{$car->model->model}}</b>
                         </h2>
                     </div>
                     <div class="panel-body">
@@ -72,11 +72,11 @@
                     <div class="col-sm-4 col-sm-pull-2">
                         <div class="row">
                             <div class="col-xs-6"><strong>Merk:</strong></div>
-                            <div class="col-xs-6">{{$car->brand}}</div>
+                            <div class="col-xs-6">{{$car->brand->brand}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>Model:</strong></div>
-                            <div class="col-xs-6">{{$car->model}}</div>
+                            <div class="col-xs-6">{{$car->model->model}}</div>
                         </div>
                         <div class="row">
                             <div class="col-xs-6"><strong>Prijs:</strong></div>
@@ -152,7 +152,7 @@
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Reageer op {{$car->brand}} {{$car->model}}</h4>
+                                    <h4 class="modal-title" id="myModalLabel">Reageer op {{$car->brand->brand}} {{$car->model->model}}</h4>
                                 </div>
                                 <div class="modal-body">
                                     {{ Form::open(array('url' => 'react_car'))}}

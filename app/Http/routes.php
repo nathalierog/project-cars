@@ -26,9 +26,8 @@ Route::get('about', function(){
 	return view('about-us');
 });
 
-Route::get('search', function(){
-	return view('search');
-});
+Route::get('/search', 'SearchController@getSearchValues');
+Route::get('/search/getModels', 'SearchController@getModels');
 
 Route::auth();
 
@@ -44,15 +43,12 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 		return redirect('backpanel');
 	});
 	Route::get('sales', 'AdminController@getSales');
-	Route::get('cars', 'AdminController@cars');
-	Route::get('addcar', function () {
-		return view('backpanel.addcar');
-	});
+	Route::get('cars', 'AdminController@carsOverview');
+	Route::get('addcar', 'AdminController@addCar');
 	Route::get('editcar/{id}', 'AdminController@editcarform');
 	Route::post('editcar/{id}', 'AdminController@editCar');
 	Route::post('deletecar/{id}', 'AdminController@deleteCar');
 	Route::post('addcar','AdminController@setCar');
-
 	Route::get('slideshow', function () {
 		return view('backpanel.slideshow');
 	});
@@ -60,6 +56,14 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 		return view('backpanel.addsliderule');
 	});
 	Route::post('addsliderule','AdminController@addsliderule');
+	Route::get('manage-brands', 'AdminController@manageBrandsModels');
+	Route::get('getmodels', 'AdminController@getModels');
+	Route::post('addbrand','AdminController@setBrand');
+	Route::get('deletebrand/{id}', 'AdminController@deleteBrand');
+	Route::post('editbrand/{id}', 'AdminController@editBrand');
+	Route::post('addmodel','AdminController@setModel');
+	Route::get('deletemodel/{id}', 'AdminController@deleteModel');
+	Route::post('editmodel/{id}', 'AdminController@editModel');
 });
 
 Route::group(['prefix' => 'cars'], function ()
