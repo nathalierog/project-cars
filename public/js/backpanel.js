@@ -194,10 +194,12 @@ function selectBrandForModel() {
 function editName(e) {
   e.stopPropagation();
   $('tr').removeClass('selected');
-  $('#car-models tbody').html('');
   $('#addModel').prop('disabled', true);
   var currentEle = $(this);
   var value = currentEle.html();
+  if($(currentEle).parents('table').attr('id') == "car-brands") {
+    $('#car-models tbody').html('');
+  }
   editModus = true;
   updateTableCell(currentEle, value);
 }
