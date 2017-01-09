@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-    <link rel="stylesheet" href="{{ URL::asset('css/cars.css') }}">
+{{ HTML::style('css/cars.css') }}
 @endsection
 
 @section('content')
@@ -23,7 +23,7 @@
                     @endif
                 @endif
             </div>
-        @foreach ($cars as $car)
+            @foreach ($cars as $car)
             <a href="{{ url('cars/details/' . $car->id)}}">
                 <div class="col-md-12 col-sm-6">
                     <div class="panel panel-default">
@@ -31,8 +31,7 @@
                             <h2 class="h4 text-center-xs text-center-sm">
                                 <b>{{ $car->brand->brand }} {{$car->model->model}}</b>
                             </h2>
-                        </div>
-                        
+                        </div>                        
                         <div class="panel-body">
                             <div class="col-md-4">
                                 <img class="img-responsive center-block img-rounded margin-sm" src="{{isset($car->images[0]) && File::exists('files/car_'.$car->images[0]->car_id.'_'.$car->images[0]->img_number.'.'.$car->images[0]->extension) ? 'files/car_'.$car->images[0]->car_id.'_'.$car->images[0]->img_number.'.'.$car->images[0]->extension : 'http://placehold.it/600x400?text='.$car->model->model}}" alt="plaatje">

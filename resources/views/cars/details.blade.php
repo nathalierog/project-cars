@@ -1,15 +1,7 @@
 @extends('layouts.app')
 
 @section('header')
-<link rel="stylesheet" href="{{ URL::asset('css/car.css') }}">
- <style>
-.carousel .carousel-inner img {
-  width: 100%;
-  height: 25em;
-  object-fit: contain;
-  overflow: hidden;
-}
- </style>
+{{ HTML::style('css/cars.css') }}
 @endsection
 
 @section('content')
