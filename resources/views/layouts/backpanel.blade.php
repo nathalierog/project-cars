@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Project CARS</title>
-    <link rel="stylesheet" href="{{ URL::asset('assets/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('assets/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('assets/tablesorter/css/theme.bootstrap.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('assets/tablesorter/css/theme.pager.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('css/backpanel.css') }}" rel="stylesheet">
+    {{ HTML::style('assets/font-awesome/css/font-awesome.min.css') }}
+    {{ HTML::style('assets/bootstrap/css/bootstrap.min.css') }}
+    {{ HTML::style('assets/tablesorter/css/theme.bootstrap.min.css') }}
+    {{ HTML::style('assets/tablesorter/css/theme.pager.min.css') }}
+    {{ HTML::style('css/backpanel.css') }}
     @yield('header') 
 </head>
 <body id="backpanel-layout">
@@ -34,12 +34,12 @@
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ url('/') }}"><i class="fa fa-btn fa-home"></i>Website</a></li>
-                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
-                            <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn" aria-hidden="true"></i>Dashboard</a></li>
-                            <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn" aria-hidden="true"></i>Cars</a></li>
-                            <li><a href="{{ url('/backpanel/manage-brands') }}"><i class="fa fa-circle-o fa-btn" aria-hidden="true"></i>Merken beheren</a></li>
-                            <li><a href="{{ url('/backpanel/sales') }}"><i class="fa fa-money fa-btn" aria-hidden="true"></i>Omzet</a></li>
+                            <li><a href="{{ url('/') }}"><i class="fa fa-btn fa-fw fa-home"></i>Website</a></li>
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-fw fa-sign-out"></i>Uitloggen</a></li>
+                            <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn fa-fw" aria-hidden="true"></i>Dashboard</a></li>
+                            <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn fa-fw" aria-hidden="true"></i>Cars</a></li>
+                            <li><a href="{{ url('/backpanel/manage-brands') }}"><i class="fa fa-circle-o fa-btn fa-fw" aria-hidden="true"></i>Merken beheren</a></li>
+                            <li><a href="{{ url('/backpanel/sales') }}"><i class="fa fa-money fa-btn fa-fw" aria-hidden="true"></i>Omzet</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -51,11 +51,11 @@
             <aside class="col-md-2 navbar-inverse" id="backpanel-side-menu">                
                 <div class="navbar-collapse collapse">
                     <ul class="nav">
-                        <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn" aria-hidden="true"></i>Dashboard</a></li>
-                        <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn" aria-hidden="true"></i>Auto's</a></li>
-                        <li><a href="{{ url('/backpanel/manage-brands') }}"><i class="fa fa-circle-o fa-btn" aria-hidden="true"></i>Merken beheren</a></li>
-                        <li><a href="{{ url('/backpanel/slideshow') }}"><i class="fa fa-picture-o fa-btn" aria-hidden="true"></i>Slideshow</a></li>
-                        <li><a href="{{ url('/backpanel/sales') }}"><i class="fa fa-money fa-btn" aria-hidden="true"></i>Omzet</a></li>
+                        <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn fa-fw" aria-hidden="true"></i>Dashboard</a></li>
+                        <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn fa-fw" aria-hidden="true"></i>Auto's</a></li>
+                        <li><a href="{{ url('/backpanel/manage-brands') }}"><i class="fa fa-circle-o fa-btn fa-fw" aria-hidden="true"></i>Merken beheren</a></li>
+                        <li><a href="{{ url('/backpanel/slideshow') }}"><i class="fa fa-picture-o fa-btn fa-fw" aria-hidden="true"></i>Slideshow</a></li>
+                        <li><a href="{{ url('/backpanel/sales') }}"><i class="fa fa-money fa-btn fa-fw" aria-hidden="true"></i>Omzet</a></li>
                     </ul>
                 </div>
             </aside>  
@@ -64,13 +64,13 @@
             </section>
         </div>
     </div>
-    <script src="{{ URL::asset('assets/jquery/jquery.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/jquery-ui/jquery-ui.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/bootstrap/js/bootstrap.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/tablesorter/js/jquery.tablesorter.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/tablesorter/js/jquery.tablesorter.widgets.min.js') }}"></script>  
-    <script src="{{ URL::asset('assets/tablesorter/js/jquery.tablesorter.pager.min.js') }}"></script>
-    <script src="{{ URL::asset('js/backpanel.js') }}"></script>
+    {{ HTML::script('assets/jquery/jquery.min.js') }}
+    {{ HTML::script('assets/jquery-ui/jquery-ui.min.js') }}
+    {{ HTML::script('assets/bootstrap/js/bootstrap.min.js') }}
+    {{ HTML::script('assets/tablesorter/js/jquery.tablesorter.min.js') }}
+    {{ HTML::script('assets/tablesorter/js/jquery.tablesorter.widgets.min.js') }}  
+    {{ HTML::script('assets/tablesorter/js/jquery.tablesorter.pager.min.js') }}
+    {{ HTML::script('js/backpanel.js') }}
     @yield('script')
 </body>
 </html>

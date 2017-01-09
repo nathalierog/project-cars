@@ -87,11 +87,9 @@
 		</div>
 	</div>
 </div>
-
 <!-- Brand Modal -->
 <div id="addBrandModal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
-
 		<!-- Brand Modal content-->
 		{{ Form:: open(array('action' => 'AdminController@setBrand')) }}
 		<div class="modal-content">
@@ -112,7 +110,6 @@
 			</div>
 		</div>
 		{{ Form:: close() }}
-
 	</div>
 </div>
 <!-- Model Modal -->
@@ -135,42 +132,39 @@
 				</div>
 			</div>
 			<div class="modal-footer">
-				{{ Form::submit('Invoeren', array('class' => 'btn btn-primary')) }}
+			{{ Form::submit('Invoeren', array('class' => 'btn btn-primary')) }}
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 		{{ Form:: close() }}
-
 	</div>
 </div>
 <br>
 <div class="col-sm-10 col-sm-offset-1">
 @if (count($errors) > 0)
     <div class="row">
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
     </div>
 @endif
-<div class="row" id="input-error" style="display:none;">
-    <div class="alert alert-danger">
-	    <ul>
-	        <li>dubbele invoer.</li>
-	    </ul>
-    </div>
+	<div class="row" id="input-error" style="display:none;">
+	    <div class="alert alert-danger">
+		    <ul>
+		        <li>dubbele invoer.</li>
+		    </ul>
+	    </div>
+	</div>
+	<div class="row" id="input-success" style="display:none;">
+	    <div class="alert alert-success">
+		    <ul>
+		        <li>opgeslagen!</li>
+		    </ul>
+	    </div>
+	</div>
 </div>
-<div class="row" id="input-success" style="display:none;">
-    <div class="alert alert-success">
-	    <ul>
-	        <li>opgeslagen!</li>
-	    </ul>
-    </div>
-</div>
-</div>
-
-<script src="{{ URL::asset('js/backpanel.js') }}"></script>
 @endsection

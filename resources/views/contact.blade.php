@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('header')
-    <link rel="stylesheet" href="{{ URL::asset('css/contact.css') }}">
-@endsection
-
 @section('content')
 <div class="container">
     <div class="row">
@@ -40,9 +36,7 @@
                     <hr>
                 </div>
             </div>
-
             {{ Form:: open(array('action' => 'ContactController@getContactForm')) }} 
-
             <div class="row">
                 <div class="form-group col-md-6">
                     <label for="name">Name</label>
@@ -60,30 +54,29 @@
                     <label for="message">Question/Comment</label>
                     <textarea class="form-control" id="message" name="message" rows="3" placeholder="Question/Comment"></textarea>
                 </div>
-                 <div class="form-group col-md-12">
+                <div class="form-group col-md-12">
                     {!! Recaptcha::render() !!}
                 </div>
                 <div class="form-group col-md-12">
                     {{ Form::submit('Verzenden', array('class' => 'btn btn-primary')) }}
                 </div>
             </div>
-
             {{ Form:: close() }}
         </div>
         <div class="col-md-10 col-md-offset-1">
-            @if (count($errors) > 0)
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
+        @if (count($errors) > 0)
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="alert alert-danger">
+                        <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                        </ul>
                     </div>
                 </div>
-            @endif
+            </div>
+        @endif
         </div>
     </div>
 </div>

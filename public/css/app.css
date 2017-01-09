@@ -6,7 +6,8 @@ body{
 	height:  100%;
     font-family: 'Lato';
 }
-/*header*/
+
+
 /*#app-default-navbar*/
 #app-layout #app-default-navbar{
 	margin-bottom: 0;
@@ -76,6 +77,7 @@ body{
 	}
 }
 
+
 /*#app-sticky-navbar*/
 #app-layout #app-sticky-navbar{
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2),0 6px 15px 0 rgba(0, 0, 0, 0.19);
@@ -130,6 +132,7 @@ body{
 	}
 }
 
+
 /*app-mobile-menu*/
 @media (min-width: 768px){
 	#app-layout #app-mobile-menu{
@@ -140,6 +143,7 @@ body{
 #app-layout #app-mobile-menu .fa-phone, #app-layout #app-mobile-menu .fa-sign-in, #app-layout #app-mobile-menu .fa-car{
 	margin-right: 5px;
 }
+
 
 /*#content*/
 #app-layout .fa-btn{
@@ -163,10 +167,12 @@ body{
 	}
 }
 
+
 /*footer*/
 #app-layout #app-default-footer hr{
 	border-color: #BBB;
 }
+
 
 /*small search info*/
 .results-info a {
@@ -178,6 +184,7 @@ body{
 .results-info a:visited {
 	color: #c66e6c;
 }
+
 
 /*pagination*/
 ul.pagination li:hover a{
@@ -199,6 +206,7 @@ ul.pagination li.active:hover span{
 	border-color:#8c8c8c;
 }
 
+
 /*advanced-search*/
 #advanced-search .panel-heading{
 	background-color: #666;
@@ -208,4 +216,18 @@ ul.pagination li.active:hover span{
 	color: white;
 	font-weight: 900;
 	text-align: center;
+}
+
+
+/*contact*/
+div.contact-info{
+	margin-top: 10px;
+}
+
+hr{
+	border-color: #bbb;
+}
+
+textarea{
+	resize: none;
 }

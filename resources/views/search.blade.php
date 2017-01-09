@@ -17,9 +17,9 @@
 									    <label>Merk</label>
 									    <select name="brand" class="form-control">
 									    	<option>Alle merken</option>
-											<?php foreach ($brands as $brand): ?>
+											@foreach ($brands as $brand)
 												<option>{{ $brand->brand }}</option>
-											<?php endforeach; ?>
+											@endforeach
 							    		</select>
 							  		</div>
 							  	</div>

@@ -2,13 +2,13 @@
 
 @section('content')
     <ul id="sortable" class="row">
-        @foreach($images as $key => $image)
-        	<li class="ui-state-default col-md-3 thumbnail" data-id="{{$image->id}}"><img src="{{url('files/car_'.$image->car_id.'_'.$image->img_number.'.'.$image->extension)}}" alt="">
-                <div class="caption">
-                    <button data-id="{{$image->id}}" class="delete-button btn btn-default col-sm-12">Verwijder</a>
-                </div>
-            </li>
-		@endforeach
+    @foreach($images as $key => $image)
+    	<li class="ui-state-default col-md-3 thumbnail" data-id="{{$image->id}}"><img src="{{url('files/car_'.$image->car_id.'_'.$image->img_number.'.'.$image->extension)}}" alt="">
+            <div class="caption">
+                <button data-id="{{$image->id}}" class="delete-button btn btn-default col-sm-12">Verwijder</a>
+            </div>
+        </li>
+	@endforeach
     </ul>
     <div class="row">
         <div class="col-sm-6">
@@ -18,7 +18,6 @@
             <button id="save-button" class="col-sm-12 btn btn-success">Opslaan</button>
         </div>
     </div>
-
     <div class="modal fade" id="AddImageModal" tabindex="-1" role="dialog" aria-labelledby="AddImageModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
