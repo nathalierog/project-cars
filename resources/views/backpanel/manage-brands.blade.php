@@ -12,18 +12,18 @@
 				    <thead>
 				      	<tr>
 					        <th>Merk</th>
-					        <th data-sorter="false" class="filter-false"></th>
+					        <th data-sorter="false" data-filter="false"></th>
 				      	</tr>
 				    </thead>
 				    <tbody>
-				    	@foreach ($carBrands as $carBrand)
+			    	@foreach ($carBrands as $carBrand)
 			        	<tr id="{{$carBrand->id}}">
-						    <td class="brand-field">{{$carBrand->brand}}</td>
+						    <td class="brand-field">{{ $carBrand->brand }}</td>
 						    <td>
 						    	<a href="{{ url('/backpanel/deletebrand/' . $carBrand->id) }}" onclick="return confirm('Weet je het zeker dat je dit merk wilt verwijderen? Alle modellen gekoppeld aan dit merk worden ook verwijderd.');">Verwijderen</a>
 						    </td>
 						</tr>
-						@endforeach 
+					@endforeach 
 					</tbody>
 					<tfoot>
 						<tr>
@@ -106,7 +106,7 @@
 			</div>
 			<div class="modal-footer">
 				{{ Form::submit('Invoeren', array('class' => 'btn btn-primary')) }}
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
 			</div>
 		</div>
 		{{ Form:: close() }}
@@ -115,7 +115,6 @@
 <!-- Model Modal -->
 <div id="addModelModal" class="modal fade" role="dialog">
 	<div class="modal-dialog">
-
 		<!-- Model Modal content-->
 		{{ Form:: open(array('action' => 'AdminController@setModel')) }}
 		<div class="modal-content">
@@ -133,7 +132,7 @@
 			</div>
 			<div class="modal-footer">
 			{{ Form::submit('Invoeren', array('class' => 'btn btn-primary')) }}
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Sluiten</button>
 			</div>
 		</div>
 		{{ Form:: close() }}
@@ -145,9 +144,9 @@
     <div class="row">
         <div class="alert alert-danger">
             <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
             </ul>
         </div>
     </div>

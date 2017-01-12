@@ -15,27 +15,27 @@
 						        <th>Merk</th>
 						        <th>Model</th>
 						        <th>Jaar</th>
-						        <th></th>
-						        <th></th>
-						        <th></th>
+						        <th data-sorter="false" data-filter="false"></th>
+						        <th data-sorter="false" data-filter="false"></th>
+						        <th data-sorter="false" data-filter="false"></th>
 					      	</tr>
 					    </thead>
 					    <tbody>
-						    @foreach ($cars as $car)
-					        	<tr>
-								    <td>{{$car->brand->brand}}</td>
-								    <td>{{$car->model->model}}</td>
-								    <td>{{$car->year}}</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/editcar/' . $car->id) }}">Bewerken</a>
-							  		</td>
-							  		<td><a href="{{url('/backpanel/imgorder/' . $car->id)}}">Afbeeldingen beheren</a></td>
-								    <td>
-								    	<a data-toggle="modal" href="#myModal-{{ $car->id }}">Verwijderen</a>
-								    </td>
+					    @foreach ($cars as $car)
+				        	<tr>
+							    <td>{{ $car->brand->brand }}</td>
+							    <td>{{ $car->model->model }}</td>
+							    <td>{{ $car->year }}</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/editcar/' . $car->id) }}">Bewerken</a>
+						  		</td>
+						  		<td><a href="{{url('/backpanel/imgorder/' . $car->id)}}">Afbeeldingen beheren</a></td>
+							    <td>
+							    	<a data-toggle="modal" href="#myModal-{{ $car->id }}">Verwijderen</a>
+							    </td>
 
-								</tr>   
-						    @endforeach
+							</tr>   
+					    @endforeach
 						</tbody>
 						<tfoot>
 							<tr>
@@ -61,33 +61,25 @@
 		</div>
 	</div>
 	@if (count($errors) > 0)
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        </div>
-    </div>
+	<div class="row">
+	    <div class="col-md-10 col-md-offset-1">
+	        <div class="alert alert-danger">
+	            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+	            </ul>
+	        </div>
+	    </div>
+	</div>
 	@endif
 
-<script src="{{ URL::asset('js/backpanel.js') }}"></script>
-
-@foreach ($cars as $car)
-
-<?php 
-	$id = $car->id 
-?>
-
+	@foreach ($cars as $car)
 	<!-- Modal -->
 	<div style="display:none;" class="modal fade" id="myModal-{{ $car->id }}" role="dialog">
 		<div class="modal-dialog">
 			<!-- Modal content-->
-			{{ Form::open(['action' => ['AdminController@deleteCar', $id]]) }}
-			{{ Form::token() }}
+			{{ Form::open(['action' => ['AdminController@deleteCar', $car->id]]) }}
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -116,8 +108,8 @@
 					<button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
 				</div>
 			</div>
-			{!! Form::close() !!}
+			{{ Form::close() }}
 		</div>
 	</div>
-@endforeach
+	@endforeach
 @endsection

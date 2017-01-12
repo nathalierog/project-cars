@@ -29,17 +29,51 @@ function tablesorter(){
       zebra : ["even", "odd"],
       filter_reset : ".reset",
       filter_cssFilter: "form-control",
-    },
-    headers:{
-      4: {sorter: false, filter: false},
-      5: {sorter: false, filter: false},
-      6: {sorter: false, filter: false},
     }
   })
   .tablesorterPager({
     container: $(".ts-pager"),
     removeRows: false,
     output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+  });
+}
+
+function getSalesDetail(){
+  $("select[name=month], select[name=year]").on("change", function() {
+    token();
+
+    var data = {}; 
+        data['year'] = $("select[name=year]").val();
+        data['month'] = this.value;
+
+    $.ajax({
+      type: "GET",
+      url: "/backpanel/sales/"+data['year']+"/"+data['month'],
+      success: function (result){
+        $("table tbody").html("");
+        $.each(result['sales'], function(key,value){
+          var row = '<tr>'+
+                      '<td>'+value['brand']+'</td>'+
+                      '<td>'+value['model']+'</td>'+
+                      '<td>'+value['spend_on']+'</td>'+
+                      '<td>'+value['sold_for']+'</td>'+
+                      '<td>'+value['car_sales']+'</td>'+
+                    '</tr>'
+          $("table tbody").append(row);
+        });
+
+        $("table tbody").append('<tr>'+
+                                  '<td><strong>Totaal</strong></td>'+
+                                  '<td></td>'+
+                                  '<td></td>'+
+                                  '<td></td>'+
+                                  '<td>'+result['total']+'</td>'+
+                                '</tr>');
+
+        $("table").trigger("update");
+        $("table").tablesorter();  
+      }
+    });
   });
 }
 
@@ -58,7 +92,7 @@ function token() {
 }
 
 function saveBrand(brand, id, value) {
-  token()
+  token();
   var oldvalue = value;
   var rowID = id;
 
@@ -81,7 +115,7 @@ function saveBrand(brand, id, value) {
 }
 
 function saveModel(model, id, value) {
-  token()
+  token();
   var oldvalue = value;
   var rowID = id;
 
@@ -257,6 +291,7 @@ function addCarGetBrandId() {
 $(document).ready(function(){ 
     editModus = false;
 
+    getSalesDetail();
     tablesorter();
     tablesorterimages();
     selectBrandForModel();

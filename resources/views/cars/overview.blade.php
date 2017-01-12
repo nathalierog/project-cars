@@ -12,7 +12,7 @@
                 @if(!empty($input['term']))
                     @if($cars->count() >= 1)
                         <div class="alert alert-info text-center">
-                            There are <b>{{$cars->count()}}</b> result(s) with <b>{{$input['term']}}</b> found.
+                            There are <strong>{{$cars->count()}}</strong> result(s) with <strong>{{$input['term']}}</strong> found.
                         </div>
                     @else 
                         <div class="alert alert-danger text-center">

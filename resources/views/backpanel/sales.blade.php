@@ -7,6 +7,19 @@
 			<div class="panel-heading">
 				<h4>Omzetlijst</h4>
 			</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-4">
+						<h5>Omzet weergeven van</h5>
+					</div>
+					<div class="col-md-4"> 
+					{{ Form::selectRange('year', 2016, strftime('%Y'), strftime('%Y'), ['class' => 'form-control']) }}
+					</div>
+					<div class="col-md-4"> 
+			    	{{ Form::selectMonth('month', strftime('%m'), ['class' => 'form-control']) }}
+			    	</div>
+			    </div>
+			</div>
 			<div class="table-responsive">
 			    <table class="table table-striped table-bordered tablesorter">
 				    <thead>
@@ -15,25 +28,25 @@
 					        <th>Model</th>
 					        <th>Uigegeven aan</th>
 					        <th>Verkocht voor</th>
-					        <th class="disabled">Winst</th>
+					        <th data-sorter="false" data-filter="false">Omzet</th>
 				      	</tr>
 				    </thead>
 				    <tbody>
 					@foreach ($sales as $sale)
 						<tr>
-						    <td>{{$sale->brand}}</td>
-						    <td>{{$sale->model}}</td>
-						    <td>{{$sale->spend_on}}</td>
-						    <td>{{$sale->sold_for}}</td>
-						    <td>{{$sale->car_sales}}</td>
+						    <td>{{ $sale->brand->brand }}</td>
+						    <td>{{ $sale->model->model }}</td>
+						    <td>{{ $sale->spend_on }}</td>
+						    <td>{{ $sale->sold_for }}</td>
+						    <td>{{ $sale->car_sales }}</td>
 						</tr>
 					@endforeach
 						<tr>
-						    <td><b>Totaal</b></td>
+						    <td><strong>Totaal</strong></td>
 						    <td></td>
 						    <td></td>
 						    <td></td>
-						    <td>{{$total or '0'}}</td>
+						    <td class="total">{{ $total or '0' }}</td>
 						</tr>
 					</tbody>
 					<tfoot>

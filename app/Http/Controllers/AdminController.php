@@ -163,10 +163,10 @@ class AdminController extends Controller
     	return redirect('backpanel/cars');
     }
 
-    public function getSales()
+    public function getAllSales()
     {
         $sales = car::select('*', DB::raw('sold_for - spend_on as car_sales'))->where("sold", "=", 1)->get();
-        // dd($sales);
+        //dd($sales);
         $total = 0;
 
         foreach ($sales as $key => $sale) {
@@ -176,6 +176,25 @@ class AdminController extends Controller
         // dd($total);
         return view('backpanel.sales', ['sales' => $sales, 'total' => $total]);
     }
+
+    public function getSalesDetail($year, $month)
+    {
+        $sales = car::select('*', DB::raw('sold_for - spend_on as car_sales'))
+                    ->join('car_brands', 'cars.brand_id', '=', 'car_brands.id')
+                    ->join('car_models', 'cars.model_id', '=', 'car_models.id')
+                    ->whereYear('cars.updated_at', '=', $year)
+                    ->whereMonth('cars.updated_at', '=', $month)
+                    ->where("sold", "=", 1)
+                    ->get();
+        $total = 0;
+
+        foreach ($sales as $key => $sale) {
+            $total += $sale->car_sales;
+        }
+
+        return response()->json(['sales' => $sales, 'total' => $total]);
+    }
+
     public function manageBrandsModels()
     {
         //Get all the brands
