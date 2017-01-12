@@ -19,7 +19,11 @@ class CarsController extends Controller
     {   
         $cars = car::with(array('images' => function($query){
             $query->orderBy('priority');
-        }))->where(function($query) use ($request) {
+        }))
+        ->leftJoin('car_brands', 'car_brands.id', '=', 'cars.brand_id')
+        ->leftJoin('car_models', 'car_models.id', '=', 'cars.model_id')
+        ->select('*')
+        ->where(function($query) use ($request) {
             if(($term = $request->get('term'))) {
                 $query->where('brand', 'LIKE', '%'. $term . '%')
                 ->orWhere("model", "LIKE", '%'. $term . '%')
@@ -32,10 +36,11 @@ class CarsController extends Controller
                 }
             }
         })
-        ->where("sold", "LIKE", 0)
-        ->orderBy('created_at', 'desc')
+        ->where("cars.sold", "LIKE", 0)
+        ->orderBy('cars.created_at', 'desc')
         ->paginate(15);
 
+        //dd($cars);
 
         return view('cars.overview', ['cars' => $cars, 'input' => $request->all()]);
     }
@@ -52,13 +57,13 @@ class CarsController extends Controller
             return  $launch;
         }
 
-        $accessories = $car->accessories;
+        $accessories = $car['accessories'];
         $accessories = multiexplode(array(",",", "," ,"," , "),$accessories);
 
-        $keywords = $car->keyword;
+        $keywords = $car['keyword'];
         $keywords = multiexplode(array(",",", "," ,"," , "),$keywords);
 
-        return view('cars.details', ['car' => $car, 'accessories' => $accessories, 'keywords' => $keywords]);
+        return view('cars.details', ['accessories' => $accessories, 'keywords' => $keywords]);
     }
 
 }
