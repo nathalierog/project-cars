@@ -39,39 +39,37 @@ function tablesorter(){
 }
 
 function getSalesDetail(){
-  $("select[name=month], select[name=year]").on("change", function() {
+  $("select[name=year_from], select[name=month_from], select[name=day_from], select[name=year_to], select[name=month_to], select[name=day_to]").on("change", function() {
     token();
 
     var data = {}; 
-        data['year'] = $("select[name=year]").val();
-        data['month'] = this.value;
+        data['year_from'] = $("select[name=year_from]").val();
+        data['month_from'] = $("select[name=month_from]").val();
+        data['day_from'] = $("select[name=day_from]").val();
+        data['year_to'] = $("select[name=year_to]").val();
+        data['month_to'] = $("select[name=month_to]").val();
+        data['day_to'] = $("select[name=day_to]").val();
 
     $.ajax({
       type: "GET",
-      url: "/backpanel/sales/"+data['year']+"/"+data['month'],
+      url: "/backpanel/sales/"+data['year_from']+"/"+data['month_from']+"/"+data['day_from']+"/"+data['year_to']+"/"+data['month_to']+"/"+data['day_to'],
       success: function (result){
-        $("table tbody").html("");
+        $("#salestable tbody").html("");
         $.each(result['sales'], function(key,value){
           var row = '<tr>'+
                       '<td>'+value['brand']+'</td>'+
                       '<td>'+value['model']+'</td>'+
-                      '<td>'+value['spend_on']+'</td>'+
-                      '<td>'+value['sold_for']+'</td>'+
-                      '<td>'+value['car_sales']+'</td>'+
+                      '<td>&euro; '+value['spend_on']+'</td>'+
+                      '<td>&euro; '+value['sold_for']+'</td>'+
+                      '<td>&euro; '+value['car_sales']+'</td>'+
                     '</tr>'
-          $("table tbody").append(row);
+          $("#salestable tbody").append(row);
         });
 
-        $("table tbody").append('<tr>'+
-                                  '<td><strong>Totaal</strong></td>'+
-                                  '<td></td>'+
-                                  '<td></td>'+
-                                  '<td></td>'+
-                                  '<td>'+result['total']+'</td>'+
-                                '</tr>');
+        $("#salestable tfoot tr td.total").html('&euro; '+result['total']);
 
-        $("table").trigger("update");
-        $("table").tablesorter();  
+        $("#salestable").trigger("update");
+        $("#salestable").tablesorter();  
       }
     });
   });
