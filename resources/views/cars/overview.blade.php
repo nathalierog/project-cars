@@ -24,17 +24,17 @@
                 @endif
             </div>
             @foreach ($cars as $car)
-            <a href="{{ url('cars/details/' . $car->id)}}">
+            <a href="{{ url('cars/details/' . $car->carid)}}">
                 <div class="col-md-12 col-sm-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <h2 class="h4 text-center-xs text-center-sm">
-                                <b>{{ $car->brand->brand }} {{$car->model->model}}</b>
+                                <b>{{ $car->brand }} {{$car->model}}</b>
                             </h2>
                         </div>                        
                         <div class="panel-body">
                             <div class="col-md-4">
-                                <img class="img-responsive center-block img-rounded margin-sm" src="{{isset($car->images[0]) && File::exists('files/car_'.$car->images[0]->car_id.'_'.$car->images[0]->img_number.'.'.$car->images[0]->extension) ? 'files/car_'.$car->images[0]->car_id.'_'.$car->images[0]->img_number.'.'.$car->images[0]->extension : 'http://placehold.it/600x400?text='.$car->model->model}}" alt="plaatje">
+                                <img class="img-responsive center-block img-rounded margin-sm" src="{{isset($car->images[0]) && File::exists('files/car_'.$car->images[0]->car_id.'_'.$car->images[0]->img_number.'.'.$car->images[0]->extension) ? 'files/car_'.$car->images[0]->car_id.'_'.$car->images[0]->img_number.'.'.$car->images[0]->extension : 'http://placehold.it/600x400?text='.$car->model}}" alt="plaatje">
                             </div>
                         </div>
                     </div>

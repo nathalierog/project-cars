@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<?php if(1===2) ?>
 @section('header')
 {{ HTML::style('css/cars.css') }}
 @endsection
@@ -184,4 +184,4 @@
     </div>
 </div>
 @endsection
-
+<?php ?>
