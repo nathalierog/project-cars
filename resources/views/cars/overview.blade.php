@@ -24,7 +24,7 @@
                 @endif
             </div>
         @foreach ($cars as $car)
-            <a href="{{ url('cars/details/' . $car->id)}}">
+            <a href="{{ url('cars/details/' . $car->carid)}}">
                 <div class="col-md-12 col-sm-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">

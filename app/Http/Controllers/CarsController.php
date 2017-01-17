@@ -22,7 +22,7 @@ class CarsController extends Controller
         }))
         ->leftJoin('car_brands', 'car_brands.id', '=', 'cars.brand_id')
         ->leftJoin('car_models', 'car_models.id', '=', 'cars.model_id')
-        ->select('*')
+        ->select('*', 'cars.id as carid')
         ->where(function($query) use ($request) {
             if(($term = $request->get('term'))) {
                 $query->where('brand', 'LIKE', '%'. $term . '%')
@@ -63,7 +63,7 @@ class CarsController extends Controller
         $keywords = $car['keyword'];
         $keywords = multiexplode(array(",",", "," ,"," , "),$keywords);
 
-        return view('cars.details', ['accessories' => $accessories, 'keywords' => $keywords]);
+        return view('cars.details', ['car' => $car, 'accessories' => $accessories, 'keywords' => $keywords]);
     }
 
 }
