@@ -98,10 +98,12 @@
                             <div class="col-xs-6"><strong>Brandstof:</strong></div>
                             <div class="col-xs-6">{{$car->fuel}}</div>
                         </div>
-                        <div class="row">
-                            <div class="col-xs-6"><strong>Nummerplaat:</strong></div>
-                            <div class="col-xs-6">{{$car->license_plate}}</div>
-                        </div>
+                        <?php if($car->license_plate) { ?>
+                            <div class="row">
+                                <div class="col-xs-6"><strong>Nummerplaat:</strong></div>
+                                <div class="col-xs-6">{{$car->license_plate}}</div>
+                            </div>
+                        <?php } ?>
                     </div>
                     <div class="col-md-6">
                         <br>
