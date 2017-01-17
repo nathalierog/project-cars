@@ -11,14 +11,14 @@
 					<div class="row">
 						<div class="col-md-12">
 							<strong>Omzet weergeven van periode:</strong>
-							<div class="row">
-								<div class="col-md-4"> 
+							<div class="form-group row">
+								<div class="form-group col-md-4"> 
 								{{ Form::selectRange('year_from', 2016, strftime('%Y'), strftime('%Y'), ['class' => 'form-control']) }}
 								</div>
-								<div class="col-md-4">
+								<div class="form-group col-md-4">
 					    		{{ Form::selectMonth('month_from', strftime('%m'), ['class' => 'form-control']) }}	
 						    	</div>
-						    	<div class="col-md-4">
+						    	<div class="form-group col-md-4">
 						    	{{ Form::selectRange('day_from', 1, 31, strftime('%d'), ['class' => 'form-control']) }}
 						    	</div>
 						    </div>
@@ -27,14 +27,14 @@
 			    	<div class="row">
 			    		<div class="col-md-12">
 							<strong>Omzet weergeven tot periode:</strong>
-							<div class="row">
-								<div class="col-md-4">
+							<div class="formp-group row">
+								<div class="form-group col-md-4">
 								{{ Form::selectRange('year_to', 2016, strftime('%Y'), strftime('%Y'), ['class' => 'form-control']) }} 
 				    			</div>
-				    			<div class="col-md-4"> 
+				    			<div class="form-group col-md-4"> 
 				    			{{ Form::selectMonth('month_to', strftime('%m'), ['class' => 'form-control']) }}
 				    			</div>
-				    			<div class="col-md-4">
+				    			<div class="form-group col-md-4">
 						    	{{ Form::selectRange('day_to', 1, 31, strftime('%d'), ['class' => 'form-control']) }}
 						    	</div>
 						    </div>
