@@ -42,7 +42,8 @@ Route::group(['prefix' => 'backpanel', 'middleware' => 'isBoth'], function () {
 	Route::get('overview', function () {
 		return redirect('backpanel');
 	});
-	Route::get('sales', 'AdminController@getSales');
+	Route::get('sales', 'AdminController@getAllSales');
+	Route::get('sales/{year_from}/{month_from}/{day_from}/{year_to}/{month_to}/{day_to}', 'AdminController@getSalesDetail');
 	Route::get('cars', 'AdminController@carsOverview');
 	Route::get('addcar', 'AdminController@addCar');
 	Route::get('editcar/{id}', 'AdminController@editcarform');

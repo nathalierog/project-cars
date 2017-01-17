@@ -15,73 +15,73 @@
 						        <th>ID</th>
 						        <th>type</th>
 						        <th>val</th>
-						        <th></th>
-						        <th></th>
+						        <th data-sorter="fale" data-filter="false"></th>
+						        <th data-sorter="fale" data-filter="false"></th>
 					      	</tr>
 					    </thead>
 					    <tbody>
-						    {{-- @foreach ($rules as $rule) --}}
-					        	<tr>
-									<td>23</td>
-								    <td>random</td>
-								    <td>0</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
-							  		</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
-								    </td>
+					    {{-- @foreach ($rules as $rule) --}}
+				        	<tr>
+								<td>23</td>
+							    <td>random</td>
+							    <td>0</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
+						  		</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
+							    </td>
 
-								</tr>
-								<tr>
-									<td>24</td>
-								    <td>meest recent</td>
-								    <td>0</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
-							  		</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
-								    </td>
+							</tr>
+							<tr>
+								<td>24</td>
+							    <td>meest recent</td>
+							    <td>0</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
+						  		</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
+							    </td>
 
-								</tr>
-								<tr>
-									<td>23</td>
-								    <td>meest bekeken</td>
-								    <td>0</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
-							  		</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
-								    </td>
+							</tr>
+							<tr>
+								<td>23</td>
+							    <td>meest bekeken</td>
+							    <td>0</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
+						  		</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
+							    </td>
 
-								</tr>
-								<tr>
-									<td>23</td>
-								    <td>minst bekeken</td>
-								    <td>0</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
-							  		</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
-								    </td>
+							</tr>
+							<tr>
+								<td>23</td>
+							    <td>minst bekeken</td>
+							    <td>0</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
+						  		</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
+							    </td>
 
-								</tr>
-								<tr>
-									<td>23</td>
-								    <td>auto</td>
-								    <td>5</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
-							  		</td>
-								    <td>
-								    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
-								    </td>
+							</tr>
+							<tr>
+								<td>23</td>
+							    <td>auto</td>
+							    <td>5</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Bewerken</a>
+						  		</td>
+							    <td>
+							    	<a href="{{ url('/backpanel/slideshow/1') }}">Verwijderen</a>
+							    </td>
 
-								</tr>               
-						    {{-- @endforeach --}}
+							</tr>               
+					    {{-- @endforeach --}}
 						</tbody>
 						<tfoot>
 							<tr>
@@ -111,9 +111,9 @@
         <div class="col-md-10 col-md-offset-1">
             <div class="alert alert-danger">
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
                 </ul>
             </div>
         </div>

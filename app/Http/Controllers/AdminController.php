@@ -12,6 +12,8 @@ use App\image;
 use DB;
 use Log;
 
+use Carbon\Carbon;
+
 class AdminController extends Controller
 {	
     public function addsliderule(){
@@ -163,10 +165,10 @@ class AdminController extends Controller
     	return redirect('backpanel/cars');
     }
 
-    public function getSales()
+    public function getAllSales()
     {
         $sales = car::select('*', DB::raw('sold_for - spend_on as car_sales'))->where("sold", "=", 1)->get();
-        // dd($sales);
+        //dd($sales);
         $total = 0;
 
         foreach ($sales as $key => $sale) {
@@ -176,6 +178,34 @@ class AdminController extends Controller
         // dd($total);
         return view('backpanel.sales', ['sales' => $sales, 'total' => $total]);
     }
+
+    public function getSalesDetail($year_from, $month_from, $day_from, $year_to, $month_to, $day_to)
+    {
+        $timestamp_from = new Carbon();
+        $timestamp_from->year = $year_from;
+        $timestamp_from->month = $month_from;
+        $timestamp_from->day = $day_from;
+
+        $timestamp_to = new Carbon();
+        $timestamp_to->year = $year_to;
+        $timestamp_to->month = $month_to;
+        $timestamp_to->day = $day_to;
+
+        $sales = car::select('*', DB::raw('sold_for - spend_on as car_sales'))
+                    ->leftJoin('car_brands', 'cars.brand_id', '=', 'car_brands.id')
+                    ->leftJoin('car_models', 'cars.model_id', '=', 'car_models.id')
+                    ->whereBetween('cars.updated_at', [$timestamp_from, $timestamp_to])
+                    ->where("sold", "=", 1)
+                    ->get();
+        $total = 0;
+
+        foreach ($sales as $key => $sale) {
+            $total += $sale->car_sales;
+        }
+
+        return response()->json(['sales' => $sales, 'total' => $total]);
+    }
+
     public function manageBrandsModels()
     {
         //Get all the brands
