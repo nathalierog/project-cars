@@ -6,16 +6,41 @@ function token()  {
 	});
 }
 
-function sendCarBrand() {
-	token();
-	$('select[name="brand"]').on('change', function(){
-		var brand = $('select[name="brand"]').val();
-		$.get('/search', {brand: brand}, function(){
-			success: console.log(brand);
-		});
+function displayModels(models) {
+	var select = '<option id="allModelsOption">Alle modellen</option>';
+	for(let nr in models) {
+		select += '<option id="'+models[nr].id+'">'+models[nr].model+'</option>'
+	}
+
+	$('#modelSelect').html(select);
+}
+
+function getModels(brandID) {
+	brandID = brandID.split("_").pop();
+	$.ajax({
+		url: '/search/getmodels',
+		type: 'GET',
+		data: {brandID: brandID},
+		success: function(models) {
+			displayModels(models);
+		}
+	});
+}
+
+function checkBrand() {
+	$('#brandSelect').on('change', function(){
+		var currentBrand = $('#brandSelect').val();
+		var brandID = $(this).children(":selected").attr("id");
+
+		if(currentBrand === "Alle merken") {
+			var select = '<option id="allModelsOption">Alle modellen</option>';
+			$('#modelSelect').html(select);
+		} else {
+			getModels(brandID);
+		}
 	});
 }
 
 $(document).ready(function(){
-	sendCarBrand();
+	checkBrand();
 });

@@ -15,20 +15,19 @@
 								<div class="col-md-6">
 									<div class="form-group">
 									    <label>Merk</label>
-									    <select name="brand" class="form-control">
-									    	<option>Alle merken</option>
-											@foreach ($brands as $brand)
-												<option>{{ $brand->brand }}</option>
-											@endforeach
+									    <select name="brand" id="brandSelect" class="form-control">
+									    	<option id="allBrandsOption">Alle merken</option>
+									    	<?php foreach ($brands as $brand): ?>
+												<option id="brand_{{$brand['id']}}">{{ $brand['brand'] }}</option>
+											<?php endforeach ?>
 							    		</select>
 							  		</div>
 							  	</div>
 							  	<div class="col-md-6">
 									<div class="form-group">
 									    <label>Model</label>
-									    <select class="form-control">
-											<option>Alle modellen</option>
-											<option>5</option>
+									    <select name="model" id="modelSelect" class="form-control">
+											<option id="allModelsOption">Alle modellen</option>
 							    		</select>
 							  		</div>
 							  	</div>

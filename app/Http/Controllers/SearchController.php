@@ -5,18 +5,23 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\car;
+use App\carBrands;
+use App\carModels;
 use DB;
 
 class SearchController extends Controller
 {
 	public function getSearchValues() {
-		// $brands = car::orderBy('brand', 'asc')->get()->values('brand');
+		$brands = carBrands::orderBy('brand', 'asc')->get();
 
-    	// return view('search', ['brands' => $brands]);
+    	return view('search', ['brands' => $brands]);
    	}
 
-   	public function getModels(Request $request) {
-   		
-   	}
+   	public function getModels()
+    {
+        $brandID = $_GET['brandID'];
+        $carModels = CarModels::where('brand_id', $brandID)->get();
+
+        return response()->json($carModels);
+    }
 }
