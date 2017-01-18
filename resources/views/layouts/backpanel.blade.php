@@ -39,6 +39,7 @@
                             <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn fa-fw" aria-hidden="true"></i>Dashboard</a></li>
                             <li><a href="{{ url('/backpanel/cars') }}"><i class="fa fa-car fa-btn fa-fw" aria-hidden="true"></i>Cars</a></li>
                             <li><a href="{{ url('/backpanel/manage-brands') }}"><i class="fa fa-circle-o fa-btn fa-fw" aria-hidden="true"></i>Merken beheren</a></li>
+                            <li><a href="{{ url('/backpanel/slideshow') }}"><i class="fa fa-picture-o fa-btn fa-fw" aria-hidden="true"></i>Slideshow</a></li>
                             <li><a href="{{ url('/backpanel/sales') }}"><i class="fa fa-money fa-btn fa-fw" aria-hidden="true"></i>Omzet</a></li>
                         </ul>
                     </li>
@@ -48,7 +49,7 @@
     </header>
     <div class="container-fluid margin-top">
         <div class="row">
-            <aside class="col-md-2 navbar-inverse" id="backpanel-side-menu">                
+            <aside class="col-md-2 col-sm-3 navbar-inverse" id="backpanel-side-menu">                
                 <div class="navbar-collapse collapse">
                     <ul class="nav">
                         <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-tachometer fa-btn fa-fw" aria-hidden="true"></i>Dashboard</a></li>
@@ -59,7 +60,7 @@
                     </ul>
                 </div>
             </aside>  
-            <section class="col-md-10 col-sm-10 col-md-offset-2 col-sm-offset-2" id="backpanel-content">           
+            <section class="col-md-10 col-sm-9 col-md-offset-2 col-sm-offset-3" id="backpanel-content">           
                 @yield('content')
             </section>
         </div>

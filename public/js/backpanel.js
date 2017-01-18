@@ -29,17 +29,49 @@ function tablesorter(){
       zebra : ["even", "odd"],
       filter_reset : ".reset",
       filter_cssFilter: "form-control",
-    },
-    headers:{
-      4: {sorter: false, filter: false},
-      5: {sorter: false, filter: false},
-      6: {sorter: false, filter: false},
     }
   })
   .tablesorterPager({
     container: $(".ts-pager"),
     removeRows: false,
     output: '{startRow} - {endRow} / {filteredRows} ({totalRows})'
+  });
+}
+
+function getSalesDetail(){
+  $("select[name=year_from], select[name=month_from], select[name=day_from], select[name=year_to], select[name=month_to], select[name=day_to]").on("change", function() {
+    token();
+
+    var data = {}; 
+        data['year_from'] = $("select[name=year_from]").val();
+        data['month_from'] = $("select[name=month_from]").val();
+        data['day_from'] = $("select[name=day_from]").val();
+        data['year_to'] = $("select[name=year_to]").val();
+        data['month_to'] = $("select[name=month_to]").val();
+        data['day_to'] = $("select[name=day_to]").val();
+
+    $.ajax({
+      type: "GET",
+      url: "/backpanel/sales/"+data['year_from']+"/"+data['month_from']+"/"+data['day_from']+"/"+data['year_to']+"/"+data['month_to']+"/"+data['day_to'],
+      success: function (result){
+        $("#salestable tbody").html("");
+        $.each(result['sales'], function(key,value){
+          var row = '<tr>'+
+                      '<td>'+value['brand']+'</td>'+
+                      '<td>'+value['model']+'</td>'+
+                      '<td>&euro; '+value['spend_on']+'</td>'+
+                      '<td>&euro; '+value['sold_for']+'</td>'+
+                      '<td>&euro; '+value['car_sales']+'</td>'+
+                    '</tr>'
+          $("#salestable tbody").append(row);
+        });
+
+        $("#salestable tfoot tr td.total").html('&euro; '+result['total']);
+
+        $("#salestable").trigger("update");
+        $("#salestable").tablesorter();  
+      }
+    });
   });
 }
 
@@ -58,7 +90,7 @@ function token() {
 }
 
 function saveBrand(brand, id, value) {
-  token()
+  token();
   var oldvalue = value;
   var rowID = id;
 
@@ -81,7 +113,7 @@ function saveBrand(brand, id, value) {
 }
 
 function saveModel(model, id, value) {
-  token()
+  token();
   var oldvalue = value;
   var rowID = id;
 
@@ -257,6 +289,7 @@ function addCarGetBrandId() {
 $(document).ready(function(){ 
     editModus = false;
 
+    getSalesDetail();
     tablesorter();
     tablesorterimages();
     selectBrandForModel();
