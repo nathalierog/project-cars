@@ -27,7 +27,7 @@ Route::get('about', function(){
 });
 
 Route::get('/search', 'SearchController@getSearchValues');
-Route::get('/search/getModels', 'SearchController@getModels');
+Route::get('/search/getmodels', 'SearchController@getModels');
 
 Route::auth();
 
