@@ -38,6 +38,12 @@ function tablesorter(){
   });
 }
 
+function getAllSales(){
+  $("#getAllSales").on("click", function(){
+    location.reload();
+  });
+}
+
 function getSalesDetail(){
   $("select[name=year_from], select[name=month_from], select[name=day_from], select[name=year_to], select[name=month_to], select[name=day_to]").on("change", function() {
     token();
@@ -289,6 +295,7 @@ function addCarGetBrandId() {
 $(document).ready(function(){ 
     editModus = false;
 
+    getAllSales();
     getSalesDetail();
     tablesorter();
     tablesorterimages();

@@ -54,14 +54,14 @@ class CarsController extends Controller
         function multiexplode ($delimiters,$string) {
             $ready = str_replace($delimiters, $delimiters[0], $string);
             $launch = explode($delimiters[0], $ready);
-            return  $launch;
+            return $launch;
         }
 
         $accessories = $car['accessories'];
-        $accessories = multiexplode(array(",",", "," ,"," , "),$accessories);
+        $accessories = array_filter(multiexplode(array(",",", "," ,"," , "),$accessories));
 
         $keywords = $car['keyword'];
-        $keywords = multiexplode(array(",",", "," ,"," , "),$keywords);
+        $keywords = array_filter(multiexplode(array(",",", "," ,"," , "),$keywords));
 
         return view('cars.details', ['car' => $car, 'accessories' => $accessories, 'keywords' => $keywords]);
     }

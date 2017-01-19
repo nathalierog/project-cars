@@ -13,7 +13,11 @@
     object-fit: contain;
     overflow: hidden;
 }
-    
+
+.carousel, .car-details{
+    margin-bottom: 15px;
+}
+
 @media screen and (min-width 768px) and (max-width 992px){    
     .eq-height{
         display: flex;
@@ -21,8 +25,4 @@
     .eq-height .col-md-12{
         flex: 1;
     }
-}
-
-ul{
-    list-style-type: none;
 }
