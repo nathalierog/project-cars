@@ -37,26 +37,12 @@
 							  		<div class="row">
 							  			<div class="col-md-6">
 											<div class="form-group">
-											    <label>Prijs</label>
+											    <label>Prijs tussen</label>
 											    <select class="form-control">
-													<option>Prijs van</option>
-													<option>&euro;&nbsp;250</option>
-													<option>&euro;&nbsp;500</option>
-													<option>&euro;&nbsp;750</option>
-													<option>&euro;&nbsp;1.000</option>
-													<option>&euro;&nbsp;1.250</option>
-													<option>&euro;&nbsp;1.500</option>
-													<option>&euro;&nbsp;2.000</option>	
-													<option>&euro;&nbsp;2.500</option>	
-													<option>&euro;&nbsp;3.000</option>	
-													<option>&euro;&nbsp;4.000</option>
-													<option>&euro;&nbsp;5.000</option>	
-													<option>&euro;&nbsp;7.500</option>	
-													<option>&euro;&nbsp;10.000</option>
-													<option>&euro;&nbsp;15.000</option>	
-													<option>&euro;&nbsp;20.000</option>	
-													<option>&euro;&nbsp;25.000</option>
-													<option>&euro;&nbsp;30.000</option>												
+													<option>---</option>
+													@foreach($prices as $price)
+														<option>&euro;&nbsp;{{ $price }}</option>
+													@endforeach								
 									    		</select>
 									  		</div>
 									  	</div>
@@ -64,26 +50,10 @@
 											<div class="form-group">
 											    <label><br></label>
 											    <select class="form-control">
-													<option>Prijs tot</option>
-													<option>&euro;&nbsp;250</option>
-													<option>&euro;&nbsp;500</option>
-													<option>&euro;&nbsp;750</option>
-													<option>&euro;&nbsp;1.000</option>
-													<option>&euro;&nbsp;1.250</option>
-													<option>&euro;&nbsp;1.500</option>
-													<option>&euro;&nbsp;2.000</option>	
-													<option>&euro;&nbsp;2.500</option>	
-													<option>&euro;&nbsp;3.000</option>	
-													<option>&euro;&nbsp;4.000</option>
-													<option>&euro;&nbsp;5.000</option>	
-													<option>&euro;&nbsp;7.500</option>	
-													<option>&euro;&nbsp;10.000</option>
-													<option>&euro;&nbsp;15.000</option>	
-													<option>&euro;&nbsp;20.000</option>	
-													<option>&euro;&nbsp;25.000</option>
-													<option>&euro;&nbsp;30.000</option>
-													<option>&euro;&nbsp;40.000</option>	
-													<option>&euro;&nbsp;50.000</option>			
+													<option>---</option>
+													@foreach($prices as $price)
+														<option>&euro;&nbsp;{{ $price }}</option>
+													@endforeach	
 												</select>
 									  		</div>
 									  	</div>
@@ -95,23 +65,12 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>Kilometerstand</label>
+												<label>Kilometerstand tussen</label>
 												<select class="form-control">
-													<option>Kilometerstand van</option>
-													<option>5.000</option>
-													<option>10.000</option>
-													<option>15.000</option>
-													<option>20.000</option>
-													<option>40.000</option>
-													<option>60.000</option>
-													<option>80.000</option>	
-													<option>100.000</option>	
-													<option>120.000</option>	
-													<option>140.000</option>
-													<option>160.000</option>	
-													<option>180.000</option>	
-													<option>200.000</option>
-													<option>250.000</option>											
+													<option>---</option>
+													@foreach($mileage as $value)
+														<option>{{ $value }}</option>
+													@endforeach											
 									    		</select>
 											</div>
 										</div>
@@ -119,22 +78,10 @@
 											<div class="form-group">
 												<label><br></label>
 												<select class="form-control">
-													<option>Kilometerstand tot</option>
-													<option>5.000</option>
-													<option>10.000</option>
-													<option>15.000</option>
-													<option>20.000</option>
-													<option>40.000</option>
-													<option>60.000</option>
-													<option>80.000</option>	
-													<option>100.000</option>	
-													<option>120.000</option>	
-													<option>140.000</option>
-													<option>160.000</option>	
-													<option>180.000</option>	
-													<option>200.000</option>
-													<option>250.000</option>	
-													<option>500.000</option>											
+													<option>---</option>
+													@foreach($mileage as $value)
+														<option>{{ $price }}</option>
+													@endforeach											
 									    		</select>
 											</div>
 										</div>
@@ -147,13 +94,17 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Bouwjaar</label>
-												<input class="form-control" type="number" placeholder="van">
+												<select class="form-control">
+													<option>---</option>
+												</select>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label><br></label>
-												<input class="form-control" type="number" placeholder="tot">
+												<select class="form-control">
+													<option>---</option>
+												</select>
 											</div>
 										</div>
 									</div>
@@ -187,10 +138,9 @@
 							<div class="row">
 								<div class="col-md-12">
 									<div class="form-group">
-										<label>Sorteer op</label>
+										<label>Sorteren op</label>
 										<select class="form-control">
-											<option>Bouwjaar</option>
-											<option>Merk en model</option>
+											<option>Merk</option>
 											<option>Kilometerstand</option>
 											<option>Prijs</option>
 										</select>

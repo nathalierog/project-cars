@@ -40,8 +40,6 @@ class CarsController extends Controller
         ->orderBy('cars.created_at', 'desc')
         ->paginate(15);
 
-        //dd($cars);
-
         return view('cars.overview', ['cars' => $cars, 'input' => $request->all()]);
     }
 
