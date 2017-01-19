@@ -32,22 +32,22 @@
                     </div>
                 {!! Form::close() !!}
                 </li>
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}" data-toggle="tooltip" data-placement="bottom" title="Inloggen"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Inloggen</a></li>
-                        <li><a href="{{ url('/register') }}" data-toggle="tooltip" data-placement="bottom" title="Registreren">Registreren</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                            @if (Auth::user()->role >= 2)
-                                <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
-                            @endif
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
-                            </ul>
-                        </li>
-                    @endif
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}" data-toggle="tooltip" data-placement="bottom" title="Inloggen"><i class="fa fa-sign-in fa-fw" aria-hidden="true"></i>Inloggen</a></li>
+                    <li><a href="{{ url('/register') }}" data-toggle="tooltip" data-placement="bottom" title="Registreren">Registreren</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                        @if (Auth::user()->role >= 2)
+                            <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
+                        @endif
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
+                        </ul>
+                    </li>
+                @endif
                 </ul>
             </div>
         </div>
@@ -78,22 +78,22 @@
                     <li><a href="{{ url('/cars') }}" title="Voertuigen">Voertuigen</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}" title="Inloggen">Inloggen</a></li>
-                        <li><a href="{{ url('/register') }}" title="Registreren">Registreren</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                            @if (Auth::user()->role >= 2)
-                                <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
-                            @endif
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
-                            </ul>
-                        </li>
-                    @endif
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}" title="Inloggen">Inloggen</a></li>
+                    <li><a href="{{ url('/register') }}" title="Registreren">Registreren</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                        @if (Auth::user()->role >= 2)
+                            <li><a href="{{ url('/backpanel/overview') }}"><i class="fa fa-btn fa-cog"></i>Beheer paneel</a></li>
+                        @endif
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Uitloggen</a></li>
+                        </ul>
+                    </li>
+                @endif
                     <li><a href="{{ url('/search') }}" title="Zoeken">Zoeken</a></li>
                 </ul>
             </div>

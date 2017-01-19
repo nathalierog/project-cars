@@ -9,6 +9,11 @@
 				</div>
 				<div class="panel-body">
 					<div class="row">
+						<div class="form-group col-md-12">
+						{{ Form::button('Alles laten zien', ['class' => 'btn btn-primary', 'id' => 'getAllSales']) }}
+						</div>
+					</div>
+					<div class="row">
 						<div class="col-md-12">
 							<strong>Omzet weergeven van periode:</strong>
 							<div class="form-group row">
