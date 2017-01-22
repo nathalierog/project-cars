@@ -22,6 +22,13 @@
                         </div>
                     @endif
                 @endif
+                @if($cars->count() == 0 && empty($input['term']))
+                    <div class="alert alert-danger text-center">
+                        <strong>Let op!</strong><br>
+                        Er zijn geen zoek resultaten gevonden op uw zoekresultaten</b>.<br>
+                        Klik <a href="/">hier</a> om naar de uitgebreide zoek pagina te gaan.
+                    </div>
+                @endif
             </div>
             @foreach ($cars as $car)
             <a href="{{ url('cars/details/' . $car->carid)}}">
