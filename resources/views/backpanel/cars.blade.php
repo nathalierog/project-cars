@@ -39,21 +39,26 @@
 						</tbody>
 						<tfoot>
 							<tr>
-							  	<th colspan="7" class="ts-pager form-horizontal">
-							    	<button type="button" class="btn first"><i class="icon-step-backward glyphicon glyphicon-step-backward"></i></button>
-							    	<button type="button" class="btn prev"><i class="icon-arrow-left glyphicon glyphicon-backward"></i></button>
-								    <span class="pagedisplay"></span>
-								    <button type="button" class="btn next"><i class="icon-arrow-right glyphicon glyphicon-forward"></i></button>
-								    <button type="button" class="btn last"><i class="icon-step-forward glyphicon glyphicon-step-forward"></i></button>
-								    <select class="pagesize input-mini" title="Select page size">
-									    <option selected="selected" value="10">10</option>
-									    <option value="20">20</option>
-									    <option value="30">30</option>
-									    <option value="40">40</option>
-									    <option value="50">50</option>
-								    </select>
-							  	</th>
-							</tr>
+	      						<th colspan="7" class="ts-pager form-inline">
+	        						<div class="btn-group btn-group-sm" role="group">
+	          							<button type="button" class="btn btn-default first"><span class="glyphicon glyphicon-step-backward"></span></button>
+	          							<button type="button" class="btn btn-default prev"><span class="glyphicon glyphicon-backward"></span></button>
+	        						</div>
+	        						<span class="pagedisplay"></span>
+					        		<div class="btn-group btn-group-sm" role="group">
+					          			<button type="button" class="btn btn-default next"><span class="glyphicon glyphicon-forward"></span></button>
+					          			<button type="button" class="btn btn-default last"><span class="glyphicon glyphicon-step-forward"></span></button>
+					        		</div>
+					        		<select class="form-control input-sm pagesize" title="Select page size">
+					          			<option selected="selected" value="10">10</option>
+					          			<option value="20">20</option>
+					          			<option value="30">30</option>
+					          			<option value="40">40</option>
+					          			<option value="50">50</option>
+					          			<option value="all">Alles</option>
+					        		</select>
+					      		</th>
+					    	</tr>
 						</tfoot>
 					</table>
 				</div>
