@@ -38,7 +38,7 @@
 								  		<div class="row">
 								  			<div class="col-md-6">
 												<div class="form-group">
-												    <label>Prijs tussen</label>
+												    <label>Prijs van</label>
 												    <select name="price-from"class="form-control filter-select">
 														<option>---</option>
 														@foreach($prices as $price)
@@ -49,7 +49,7 @@
 										  	</div>
 										  	<div class="col-md-6">
 												<div class="form-group">
-												    <label><br></label>
+												    <label>Prijs tot</label>
 												    <select name="price-to" class="form-control filter-select">
 														<option>---</option>
 														@foreach($prices as $price)
@@ -66,7 +66,7 @@
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
-													<label>Kilometerstand tussen</label>
+													<label>Kilometerstand van</label>
 													<select name="mileage-from" class="form-control filter-select">
 														<option>---</option>
 														@foreach($mileage as $value)
@@ -77,7 +77,7 @@
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label><br></label>
+													<label>Kilometerstand tot</label>
 													<select name="mileage-to" class="form-control filter-select">
 														<option>---</option>
 														@foreach($mileage as $value)
@@ -94,13 +94,13 @@
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
-													<label>Bouwjaar</label>
+													<label>Bouwjaar van</label>
 													<select name="year-from" class="form-control filter-select year-select"></select>
 												</div>
 											</div>
 											<div class="col-md-6">
 												<div class="form-group">
-													<label><br></label>
+													<label>Bouwjaar tot</label>
 													<select name="year-to" class="form-control filter-select year-select"></select>
 												</div>
 											</div>

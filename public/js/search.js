@@ -34,6 +34,7 @@ function getModels(brandID) {
 		type: 'GET',
 		data: {brandID: brandID},
 		success: function(models) {
+			$('#modelSelect').prop('disabled', false);
 			displayModels(models);
 		}
 	});
@@ -43,6 +44,7 @@ function checkBrand() {
 	$('#brandSelect').on('change', function(){
 		var currentBrand = $('#brandSelect').val();
 		var brandID = $(this).children(":selected").attr("id");
+		$('#modelSelect').prop('disabled', true);
 
 		if(currentBrand === "---") {
 			var select = '<option value="---" id="allModelsOption">Alle modellen</option>';
