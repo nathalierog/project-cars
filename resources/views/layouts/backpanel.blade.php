@@ -8,6 +8,7 @@
     <title>Project CARS</title>
     {{ HTML::style('assets/font-awesome/css/font-awesome.min.css') }}
     {{ HTML::style('assets/bootstrap/css/bootstrap.min.css') }}
+    {{ HTML::style('assets/jquery-ui/css/jquery-ui.min.css') }}
     {{ HTML::style('assets/tablesorter/css/theme.bootstrap.min.css') }}
     {{ HTML::style('assets/tablesorter/css/theme.pager.min.css') }}
     {{ HTML::style('css/backpanel.css') }}
@@ -66,7 +67,7 @@
         </div>
     </div>
     {{ HTML::script('assets/jquery/jquery.min.js') }}
-    {{ HTML::script('assets/jquery-ui/jquery-ui.min.js') }}
+    {{ HTML::script('assets/jquery-ui/js/jquery-ui.min.js') }}
     {{ HTML::script('assets/bootstrap/js/bootstrap.min.js') }}
     {{ HTML::script('assets/tablesorter/js/jquery.tablesorter.min.js') }}
     {{ HTML::script('assets/tablesorter/js/jquery.tablesorter.widgets.min.js') }}  
