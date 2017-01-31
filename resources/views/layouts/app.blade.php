@@ -109,6 +109,7 @@
     </footer>
     {{ HTML::script('assets/jquery/jquery.min.js') }}
     {{ HTML::script('assets/bootstrap/js/bootstrap.min.js') }}
+    {{ HTML::script('assets/jquery-ui/jquery-ui.min.js') }}
     {{ HTML::script('js/layout.js') }}
     {{ HTML::script('js/search.js') }}
 </body>

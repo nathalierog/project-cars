@@ -28,6 +28,7 @@ Route::get('about', function(){
 
 Route::get('/search', 'SearchController@getSearchValues');
 Route::get('/search/getmodels', 'SearchController@getModels');
+Route::get('/search/count-results', 'SearchController@countResults');
 
 Route::auth();
 
